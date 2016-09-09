@@ -10,10 +10,10 @@ atim是tim即时聊天服务器的java客户端，可于android移动端     <br
 		config.setResource("iphone5s");	      客户端来源标识，可以是手机型号或 
 		config.setReconnectionAllowed(true);  是否断开重连，默认为真 
 
-    AckListener 是服务器ack回复的监听接口 ，登陆成功后的服务器反馈信息等 <br/>
-    MessageListener  是服务器推送message的监听接口 ，接收好友或群的信息 <br/>
-	PresenceListener 是用户在线状态的监听接口 ，如好友上下线或离开等状态 <br/> <br/>
+    AckListener 是服务器ack回复的监听接口 ，登陆成功后的服务器反馈信息等 
+    MessageListener  是服务器推送message的监听接口 ，接收好友或群的信息 
+	PresenceListener 是用户在线状态的监听接口 ，如好友上下线或离开等状态 
 	
-	Client对象是主要的操作接口  ：提供 login , sendMessage ,close 等方法 <br/><br/>
+	Client对象是主要的操作接口  ：提供 login , sendMessage ,close 等方法 
 	
 	具体的操作方式请参考 test包中TestClient.java 类
