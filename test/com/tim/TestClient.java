@@ -57,8 +57,10 @@ public class TestClient implements Runnable {
 		config.setHeartbeat(40);
 		config.setIp("127.0.0.1");
 		config.setPort(3737);
-		config.setResource("test");
+		config.setResource("huawei");
 		config.setReconnectionAllowed(true);
+		config.setTLS(true); // 用TLS传输
+		config.setTsslPort(5757); // 服务器TLS端口
 		TPClient<Client> tp = TPClient.newInstance(config);
 		Client client = tp.getClient(ClientFactory.getClient(config));
 		client.addMessageListener(new MessageListenerImpl());
@@ -84,11 +86,10 @@ public class TestClient implements Runnable {
 		}
 	}
 
-	//
 	public static void main(String[] args) {
 		try {
-			// new Thread(new TestClient("dong", "abc", "wu")).start();
-			new Thread(new TestClient("wu", "abc", "dong")).start();
+			new Thread(new TestClient("dong", "1234", "wu")).start();
+			// new Thread(new TestClient("wu", "1234", "dong")).start();
 			Thread.sleep(10000000);
 		} catch (Exception e) {
 			logger.severe(e);

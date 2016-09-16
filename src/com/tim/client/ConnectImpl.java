@@ -1,9 +1,20 @@
 package com.tim.client;
 
+import java.net.Socket;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.concurrent.CountDownLatch;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
+import org.apache.thrift.transport.TIOStreamTransport;
+import org.apache.thrift.transport.TSSLTransportFactory;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 
@@ -55,9 +66,32 @@ public class ConnectImpl implements IConnect {
 
 	private void connect() throws TimException {
 		try {
-			transport = new TSocket(config.getIp(), config.getPort(), 0, config.getConnectTimeout());
+			if (config.isTLS()) {
+				X509TrustManager xtm = new X509TrustManager() {
+					public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+					}
+
+					public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+					}
+
+					public X509Certificate[] getAcceptedIssuers() {
+						return null;
+					}
+				};
+				SSLContext ctx = SSLContext.getInstance("SSL");
+				ctx.init(null, new TrustManager[] { xtm }, null);
+				SSLSocket socket = (SSLSocket) ctx.getSocketFactory().createSocket(config.getIp(), config.getTsslPort());
+				TSocket ts = new TSocket(socket);
+				ts.setConnectTimeout(config.getConnectTimeout());
+				ts.setSocketTimeout(0);
+				transport = ts;
+			} else {
+				transport = new TSocket(config.getIp(), config.getPort(), 0, config.getConnectTimeout());
+			}
+			if (!transport.isOpen()) {
+				transport.open();
+			}
 			TProtocol protocol = new TCompactProtocol(transport);
-			transport.open();
 			flow = FlowConnect.START;
 			CountDownLatch cdl = new CountDownLatch(1);
 			new Thread(new TprocessorClient(protocol, this, cdl, client)).start();

@@ -37,6 +37,8 @@ public class Config implements Cloneable {
 	private String resource = "timclient";
 	private String loginName;
 	private String password;
+	private boolean TLS = false;
+	private int TsslPort = 5757;
 
 	/** 日志级别 (default info) */
 	public static void SetLogLevel(LogLevel level) {
@@ -120,5 +122,21 @@ public class Config implements Cloneable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public int getTsslPort() {
+		return TsslPort;
+	}
+
+	public void setTsslPort(int tsslPort) {
+		TsslPort = tsslPort;
+	}
+
+	public boolean isTLS() {
+		return TLS;
+	}
+
+	public void setTLS(boolean tLS) {
+		TLS = tLS;
 	}
 }
