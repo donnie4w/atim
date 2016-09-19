@@ -9,6 +9,8 @@ atim是tim即时聊天服务器的java客户端，可用于android移动端     
 		config.setPort(3737);				  tim服务器端口 
 		config.setResource("iphone5s");	      客户端来源标识，可以是手机型号或 
 		config.setReconnectionAllowed(true);  是否断开重连，默认为真 
+		config.setTLS(true); 				  用TLS传输
+		config.setTsslPort(5757); 			  服务器TLS端口
 
     AckListener 是服务器ack回复的监听接口 ，登陆成功后的服务器反馈信息等 
     MessageListener  是服务器推送message的监听接口 ，接收好友或群的信息 
