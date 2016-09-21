@@ -1,6 +1,7 @@
 package com.tim.config;
 
 import com.tim.log.LogLevel;
+import com.tim.packet.timConstants;
 
 /**
  * ClassName: Config.java <br/>
@@ -14,7 +15,7 @@ public class Config implements Cloneable {
 
 	public final static String ENCODE = "utf-8";
 	public final static String NS = "atim";
-	public final static String VERSION = "1.0";
+	public final static String VERSION = timConstants.protocolversionName;
 
 	static LogLevel LOGLEVEL = LogLevel.INFO;
 
