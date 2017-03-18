@@ -52,7 +52,7 @@ public class ITimImpl extends IfaceImpl {
 			try {
 				connect.getAckListener().processAck(ab);
 			} catch (Exception e) {
-				new TException(e);
+				throw new TException(e);
 			}
 		}
 	}
@@ -63,7 +63,7 @@ public class ITimImpl extends IfaceImpl {
 		try {
 			connect.getPresenceListener().processPresence(pbean);
 		} catch (Exception e) {
-			new TException(e);
+			throw new TException(e);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class ITimImpl extends IfaceImpl {
 		try {
 			connect.getMessageListener().processMessage(mbean);
 		} catch (Exception e) {
-			new TException(e);
+			throw new TException(e);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class ITimImpl extends IfaceImpl {
 		try {
 			connect.getMessageListener().processMessage(mbeanList.getTimMBeanList());
 		} catch (Exception e) {
-			new TException(e);
+			throw new TException(e);
 		}
 	}
 
