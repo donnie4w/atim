@@ -343,16 +343,16 @@ public class Timclient implements ITimClient {
      * send  stream data to user
      */
     @Override
-    public void StreamToUser(String to, byte[] data) throws TimException {
-        this.handler.sendws(this.tx.stream(data, to, ""));
+    public void StreamToUser(String to, byte[] data,short udShow,short udType) throws TimException {
+        this.handler.sendws(this.tx.stream(data, to, "",udShow,udType));
     }
 
     /**
      * send  stream data to room
      */
     @Override
-    public void StreamToRoom(String to, byte[] data) throws TimException {
-        this.handler.sendws(this.tx.stream(data, "", to));
+    public void StreamToRoom(String to, byte[] data,short udShow,short udType) throws TimException {
+        this.handler.sendws(this.tx.stream(data, "", to,udShow,udType));
     }
 
     /**
