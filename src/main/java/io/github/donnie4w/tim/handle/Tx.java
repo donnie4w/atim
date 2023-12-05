@@ -68,7 +68,7 @@ public class Tx {
 
     // register with username password and domain
     // 使用用户名密码域名注册
-    byte[] loginByAccount(String username, String password, String domain, String resource, byte termtyp,Map<String,String> extend) {
+    byte[] loginByAccount(String username, String password, String domain, String resource, byte termtyp, Map<String, String> extend) {
         ta.setName(username);
         ta.setPwd(password);
         ta.setDomain(domain);
@@ -87,7 +87,7 @@ public class Tx {
     }
 
 
-    byte[] loginByToken(long token, String resource, byte termtyp,Map<String,String> extend) {
+    byte[] loginByToken(long token, String resource, byte termtyp, Map<String, String> extend) {
         ta.setToken(token);
         ta.setResource(resource);
         ta.setTermtyp(termtyp);
@@ -174,7 +174,7 @@ public class Tx {
         return this._message(TIMBURNMESSAGE, (byte) 2, (byte) 3, msg, to, "", udshow, udtype, msgId, null, null);
     }
 
-    byte[] stream(byte[] data, String to, String room) {
+    byte[] stream(byte[] data, String to, String room, short udShow, short udType) {
         TimMessage tm = new TimMessage();
         if (!Utils.isBlank(room)) {
             tm.setRoomTid(new Tid(room));
@@ -185,7 +185,15 @@ public class Tx {
         if (!Utils.isBlank(to)) {
             tm.setToTid(new Tid(to));
         }
-        tm.setDataBinary(data);
+        if (data != null) {
+            tm.setDataBinary(data);
+        }
+        if (udShow > 0) {
+            tm.setUdshow(udShow);
+        }
+        if (udType > 0) {
+            tm.setUdtype(udType);
+        }
         try {
             byte[] bs = Utils.tEncode(tm);
             ByteBuffer bb = ByteBuffer.allocate(1 + bs.length);
@@ -536,7 +544,7 @@ public class Tx {
         return null;
     }
 
-    byte[] modify(String oldpwd,String newpwd) {
+    byte[] modify(String oldpwd, String newpwd) {
         TimReq tr = new TimReq();
         tr.setRtype(BUSINESS_MODIFYAUTH);
         tr.setReqStr(oldpwd);
