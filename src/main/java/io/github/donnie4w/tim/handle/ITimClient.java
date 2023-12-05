@@ -58,10 +58,10 @@ public interface ITimClient {
     void MessageByPrivacy(String user, String room, String msg, short showType, short textType, Map<String, String> extend, Map<String, ByteBuffer> extra) throws TimException;
 
     // send  stream data to user
-    void StreamToUser(String to, byte[] msg) throws TimException;
+    void StreamToUser(String to, byte[] msg,short udShow,short udType) throws TimException;
 
     // send  stream data to room
-    void StreamToRoom(String room, byte[] msg) throws TimException;
+    void StreamToRoom(String room, byte[] msg,short udShow,short udType) throws TimException;
 
     // send presence to other user
     // 发送状态给其他账号
