@@ -25,16 +25,16 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new TimUserBeanStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TimUserBeanTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable java.lang.String name; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String nickName; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String brithday; // optional
+  public @org.apache.thrift.annotation.Nullable String name; // optional
+  public @org.apache.thrift.annotation.Nullable String nickName; // optional
+  public @org.apache.thrift.annotation.Nullable String brithday; // optional
   public byte gender; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String cover; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String area; // optional
+  public @org.apache.thrift.annotation.Nullable String cover; // optional
+  public @org.apache.thrift.annotation.Nullable String area; // optional
   public long createtime; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.String> photoTidAlbum; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.nio.ByteBuffer> extra; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.List<String> photoTidAlbum; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String,java.nio.ByteBuffer> extra; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -49,7 +49,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     EXTEND((short)10, "extend"),
     EXTRA((short)11, "extra");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -94,7 +94,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -102,14 +102,14 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -120,7 +120,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -188,15 +188,15 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     }
     this.createtime = other.createtime;
     if (other.isSetPhotoTidAlbum()) {
-      java.util.List<java.lang.String> __this__photoTidAlbum = new java.util.ArrayList<java.lang.String>(other.photoTidAlbum);
+      java.util.List<String> __this__photoTidAlbum = new java.util.ArrayList<String>(other.photoTidAlbum);
       this.photoTidAlbum = __this__photoTidAlbum;
     }
     if (other.isSetExtend()) {
-      java.util.Map<java.lang.String,java.lang.String> __this__extend = new java.util.HashMap<java.lang.String,java.lang.String>(other.extend);
+      java.util.Map<String, String> __this__extend = new java.util.HashMap<String, String>(other.extend);
       this.extend = __this__extend;
     }
     if (other.isSetExtra()) {
-      java.util.Map<java.lang.String,java.nio.ByteBuffer> __this__extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(other.extra);
+      java.util.Map<String,java.nio.ByteBuffer> __this__extra = new java.util.HashMap<String,java.nio.ByteBuffer>(other.extra);
       this.extra = __this__extra;
     }
   }
@@ -223,11 +223,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public TimUserBean setName(@org.apache.thrift.annotation.Nullable java.lang.String name) {
+  public TimUserBean setName(@org.apache.thrift.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -248,11 +248,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getNickName() {
+  public String getNickName() {
     return this.nickName;
   }
 
-  public TimUserBean setNickName(@org.apache.thrift.annotation.Nullable java.lang.String nickName) {
+  public TimUserBean setNickName(@org.apache.thrift.annotation.Nullable String nickName) {
     this.nickName = nickName;
     return this;
   }
@@ -273,11 +273,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getBrithday() {
+  public String getBrithday() {
     return this.brithday;
   }
 
-  public TimUserBean setBrithday(@org.apache.thrift.annotation.Nullable java.lang.String brithday) {
+  public TimUserBean setBrithday(@org.apache.thrift.annotation.Nullable String brithday) {
     this.brithday = brithday;
     return this;
   }
@@ -321,11 +321,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getCover() {
+  public String getCover() {
     return this.cover;
   }
 
-  public TimUserBean setCover(@org.apache.thrift.annotation.Nullable java.lang.String cover) {
+  public TimUserBean setCover(@org.apache.thrift.annotation.Nullable String cover) {
     this.cover = cover;
     return this;
   }
@@ -346,11 +346,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getArea() {
+  public String getArea() {
     return this.area;
   }
 
-  public TimUserBean setArea(@org.apache.thrift.annotation.Nullable java.lang.String area) {
+  public TimUserBean setArea(@org.apache.thrift.annotation.Nullable String area) {
     this.area = area;
     return this;
   }
@@ -398,23 +398,23 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Iterator<java.lang.String> getPhotoTidAlbumIterator() {
+  public java.util.Iterator<String> getPhotoTidAlbumIterator() {
     return (this.photoTidAlbum == null) ? null : this.photoTidAlbum.iterator();
   }
 
-  public void addToPhotoTidAlbum(java.lang.String elem) {
+  public void addToPhotoTidAlbum(String elem) {
     if (this.photoTidAlbum == null) {
-      this.photoTidAlbum = new java.util.ArrayList<java.lang.String>();
+      this.photoTidAlbum = new java.util.ArrayList<String>();
     }
     this.photoTidAlbum.add(elem);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.List<java.lang.String> getPhotoTidAlbum() {
+  public java.util.List<String> getPhotoTidAlbum() {
     return this.photoTidAlbum;
   }
 
-  public TimUserBean setPhotoTidAlbum(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.String> photoTidAlbum) {
+  public TimUserBean setPhotoTidAlbum(@org.apache.thrift.annotation.Nullable java.util.List<String> photoTidAlbum) {
     this.photoTidAlbum = photoTidAlbum;
     return this;
   }
@@ -438,19 +438,19 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     return (this.extend == null) ? 0 : this.extend.size();
   }
 
-  public void putToExtend(java.lang.String key, java.lang.String val) {
+  public void putToExtend(String key, String val) {
     if (this.extend == null) {
-      this.extend = new java.util.HashMap<java.lang.String,java.lang.String>();
+      this.extend = new java.util.HashMap<String, String>();
     }
     this.extend.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.lang.String> getExtend() {
+  public java.util.Map<String, String> getExtend() {
     return this.extend;
   }
 
-  public TimUserBean setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend) {
+  public TimUserBean setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend) {
     this.extend = extend;
     return this;
   }
@@ -474,19 +474,19 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     return (this.extra == null) ? 0 : this.extra.size();
   }
 
-  public void putToExtra(java.lang.String key, java.nio.ByteBuffer val) {
+  public void putToExtra(String key, java.nio.ByteBuffer val) {
     if (this.extra == null) {
-      this.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>();
+      this.extra = new java.util.HashMap<String,java.nio.ByteBuffer>();
     }
     this.extra.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.nio.ByteBuffer> getExtra() {
+  public java.util.Map<String,java.nio.ByteBuffer> getExtra() {
     return this.extra;
   }
 
-  public TimUserBean setExtra(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.nio.ByteBuffer> extra) {
+  public TimUserBean setExtra(@org.apache.thrift.annotation.Nullable java.util.Map<String,java.nio.ByteBuffer> extra) {
     this.extra = extra;
     return this;
   }
@@ -507,13 +507,13 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case NAME:
       if (value == null) {
         unsetName();
       } else {
-        setName((java.lang.String)value);
+        setName((String)value);
       }
       break;
 
@@ -521,7 +521,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetNickName();
       } else {
-        setNickName((java.lang.String)value);
+        setNickName((String)value);
       }
       break;
 
@@ -529,7 +529,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetBrithday();
       } else {
-        setBrithday((java.lang.String)value);
+        setBrithday((String)value);
       }
       break;
 
@@ -537,7 +537,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetGender();
       } else {
-        setGender((java.lang.Byte)value);
+        setGender((Byte)value);
       }
       break;
 
@@ -545,7 +545,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetCover();
       } else {
-        setCover((java.lang.String)value);
+        setCover((String)value);
       }
       break;
 
@@ -553,7 +553,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetArea();
       } else {
-        setArea((java.lang.String)value);
+        setArea((String)value);
       }
       break;
 
@@ -561,7 +561,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetCreatetime();
       } else {
-        setCreatetime((java.lang.Long)value);
+        setCreatetime((Long)value);
       }
       break;
 
@@ -569,7 +569,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetPhotoTidAlbum();
       } else {
-        setPhotoTidAlbum((java.util.List<java.lang.String>)value);
+        setPhotoTidAlbum((java.util.List<String>)value);
       }
       break;
 
@@ -577,7 +577,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetExtend();
       } else {
-        setExtend((java.util.Map<java.lang.String,java.lang.String>)value);
+        setExtend((java.util.Map<String, String>)value);
       }
       break;
 
@@ -585,7 +585,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (value == null) {
         unsetExtra();
       } else {
-        setExtra((java.util.Map<java.lang.String,java.nio.ByteBuffer>)value);
+        setExtra((java.util.Map<String,java.nio.ByteBuffer>)value);
       }
       break;
 
@@ -594,7 +594,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case NAME:
       return getName();
@@ -627,14 +627,14 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       return getExtra();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -659,11 +659,11 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     case EXTRA:
       return isSetExtra();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimUserBean)
       return this.equals((TimUserBean)that);
     return false;
@@ -823,7 +823,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetName(), other.isSetName());
+    lastComparison = Boolean.compare(isSetName(), other.isSetName());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -833,7 +833,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetNickName(), other.isSetNickName());
+    lastComparison = Boolean.compare(isSetNickName(), other.isSetNickName());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -843,7 +843,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetBrithday(), other.isSetBrithday());
+    lastComparison = Boolean.compare(isSetBrithday(), other.isSetBrithday());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -853,7 +853,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetGender(), other.isSetGender());
+    lastComparison = Boolean.compare(isSetGender(), other.isSetGender());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -863,7 +863,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetCover(), other.isSetCover());
+    lastComparison = Boolean.compare(isSetCover(), other.isSetCover());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -873,7 +873,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetArea(), other.isSetArea());
+    lastComparison = Boolean.compare(isSetArea(), other.isSetArea());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -883,7 +883,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetCreatetime(), other.isSetCreatetime());
+    lastComparison = Boolean.compare(isSetCreatetime(), other.isSetCreatetime());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -893,7 +893,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetPhotoTidAlbum(), other.isSetPhotoTidAlbum());
+    lastComparison = Boolean.compare(isSetPhotoTidAlbum(), other.isSetPhotoTidAlbum());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -903,7 +903,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtend(), other.isSetExtend());
+    lastComparison = Boolean.compare(isSetExtend(), other.isSetExtend());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -913,7 +913,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtra(), other.isSetExtra());
+    lastComparison = Boolean.compare(isSetExtra(), other.isSetExtra());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -943,8 +943,8 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimUserBean(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimUserBean(");
     boolean first = true;
 
     if (isSetName()) {
@@ -1055,7 +1055,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
@@ -1145,8 +1145,8 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
             if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
               {
                 org.apache.thrift.protocol.TList _list10 = iprot.readListBegin();
-                struct.photoTidAlbum = new java.util.ArrayList<java.lang.String>(_list10.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _elem11;
+                struct.photoTidAlbum = new java.util.ArrayList<String>(_list10.size);
+                @org.apache.thrift.annotation.Nullable String _elem11;
                 for (int _i12 = 0; _i12 < _list10.size; ++_i12)
                 {
                   _elem11 = iprot.readString();
@@ -1163,9 +1163,9 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map13 = iprot.readMapBegin();
-                struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map13.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key14;
-                @org.apache.thrift.annotation.Nullable java.lang.String _val15;
+                struct.extend = new java.util.HashMap<String, String>(2*_map13.size);
+                @org.apache.thrift.annotation.Nullable String _key14;
+                @org.apache.thrift.annotation.Nullable String _val15;
                 for (int _i16 = 0; _i16 < _map13.size; ++_i16)
                 {
                   _key14 = iprot.readString();
@@ -1183,8 +1183,8 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map17 = iprot.readMapBegin();
-                struct.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(2*_map17.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key18;
+                struct.extra = new java.util.HashMap<String,java.nio.ByteBuffer>(2*_map17.size);
+                @org.apache.thrift.annotation.Nullable String _key18;
                 @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer _val19;
                 for (int _i20 = 0; _i20 < _map17.size; ++_i20)
                 {
@@ -1265,7 +1265,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
           oprot.writeFieldBegin(PHOTO_TID_ALBUM_FIELD_DESC);
           {
             oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRING, struct.photoTidAlbum.size()));
-            for (java.lang.String _iter21 : struct.photoTidAlbum)
+            for (String _iter21 : struct.photoTidAlbum)
             {
               oprot.writeString(_iter21);
             }
@@ -1279,7 +1279,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
           oprot.writeFieldBegin(EXTEND_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extend.size()));
-            for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter22 : struct.extend.entrySet())
+            for (java.util.Map.Entry<String, String> _iter22 : struct.extend.entrySet())
             {
               oprot.writeString(_iter22.getKey());
               oprot.writeString(_iter22.getValue());
@@ -1294,7 +1294,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
           oprot.writeFieldBegin(EXTRA_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extra.size()));
-            for (java.util.Map.Entry<java.lang.String, java.nio.ByteBuffer> _iter23 : struct.extra.entrySet())
+            for (java.util.Map.Entry<String, java.nio.ByteBuffer> _iter23 : struct.extra.entrySet())
             {
               oprot.writeString(_iter23.getKey());
               oprot.writeBinary(_iter23.getValue());
@@ -1378,7 +1378,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (struct.isSetPhotoTidAlbum()) {
         {
           oprot.writeI32(struct.photoTidAlbum.size());
-          for (java.lang.String _iter24 : struct.photoTidAlbum)
+          for (String _iter24 : struct.photoTidAlbum)
           {
             oprot.writeString(_iter24);
           }
@@ -1387,7 +1387,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (struct.isSetExtend()) {
         {
           oprot.writeI32(struct.extend.size());
-          for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter25 : struct.extend.entrySet())
+          for (java.util.Map.Entry<String, String> _iter25 : struct.extend.entrySet())
           {
             oprot.writeString(_iter25.getKey());
             oprot.writeString(_iter25.getValue());
@@ -1397,7 +1397,7 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (struct.isSetExtra()) {
         {
           oprot.writeI32(struct.extra.size());
-          for (java.util.Map.Entry<java.lang.String, java.nio.ByteBuffer> _iter26 : struct.extra.entrySet())
+          for (java.util.Map.Entry<String, java.nio.ByteBuffer> _iter26 : struct.extra.entrySet())
           {
             oprot.writeString(_iter26.getKey());
             oprot.writeBinary(_iter26.getValue());
@@ -1441,8 +1441,8 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (incoming.get(7)) {
         {
           org.apache.thrift.protocol.TList _list27 = iprot.readListBegin(org.apache.thrift.protocol.TType.STRING);
-          struct.photoTidAlbum = new java.util.ArrayList<java.lang.String>(_list27.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _elem28;
+          struct.photoTidAlbum = new java.util.ArrayList<String>(_list27.size);
+          @org.apache.thrift.annotation.Nullable String _elem28;
           for (int _i29 = 0; _i29 < _list27.size; ++_i29)
           {
             _elem28 = iprot.readString();
@@ -1454,9 +1454,9 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (incoming.get(8)) {
         {
           org.apache.thrift.protocol.TMap _map30 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map30.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key31;
-          @org.apache.thrift.annotation.Nullable java.lang.String _val32;
+          struct.extend = new java.util.HashMap<String, String>(2*_map30.size);
+          @org.apache.thrift.annotation.Nullable String _key31;
+          @org.apache.thrift.annotation.Nullable String _val32;
           for (int _i33 = 0; _i33 < _map30.size; ++_i33)
           {
             _key31 = iprot.readString();
@@ -1469,8 +1469,8 @@ public class TimUserBean implements org.apache.thrift.TBase<TimUserBean, TimUser
       if (incoming.get(9)) {
         {
           org.apache.thrift.protocol.TMap _map34 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(2*_map34.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key35;
+          struct.extra = new java.util.HashMap<String,java.nio.ByteBuffer>(2*_map34.size);
+          @org.apache.thrift.annotation.Nullable String _key35;
           @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer _val36;
           for (int _i37 = 0; _i37 < _map34.size; ++_i37)
           {
