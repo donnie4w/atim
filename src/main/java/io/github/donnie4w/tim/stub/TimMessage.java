@@ -40,13 +40,13 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
   public @org.apache.thrift.annotation.Nullable Tid toTid; // optional
   public @org.apache.thrift.annotation.Nullable Tid roomTid; // optional
   public @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer dataBinary; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String dataString; // optional
+  public @org.apache.thrift.annotation.Nullable String dataString; // optional
   public boolean isOffline; // optional
   public long timestamp; // optional
   public short udtype; // optional
   public short udshow; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.nio.ByteBuffer> extra; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String,java.nio.ByteBuffer> extra; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -67,7 +67,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     EXTEND((short)15, "extend"),
     EXTRA((short)16, "extra");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -124,7 +124,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -132,14 +132,14 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -150,7 +150,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -254,11 +254,11 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     this.udtype = other.udtype;
     this.udshow = other.udshow;
     if (other.isSetExtend()) {
-      java.util.Map<java.lang.String,java.lang.String> __this__extend = new java.util.HashMap<java.lang.String,java.lang.String>(other.extend);
+      java.util.Map<String, String> __this__extend = new java.util.HashMap<String, String>(other.extend);
       this.extend = __this__extend;
     }
     if (other.isSetExtra()) {
-      java.util.Map<java.lang.String,java.nio.ByteBuffer> __this__extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(other.extra);
+      java.util.Map<String,java.nio.ByteBuffer> __this__extra = new java.util.HashMap<String,java.nio.ByteBuffer>(other.extra);
       this.extra = __this__extra;
     }
   }
@@ -522,11 +522,11 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getDataString() {
+  public String getDataString() {
     return this.dataString;
   }
 
-  public TimMessage setDataString(@org.apache.thrift.annotation.Nullable java.lang.String dataString) {
+  public TimMessage setDataString(@org.apache.thrift.annotation.Nullable String dataString) {
     this.dataString = dataString;
     return this;
   }
@@ -642,19 +642,19 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     return (this.extend == null) ? 0 : this.extend.size();
   }
 
-  public void putToExtend(java.lang.String key, java.lang.String val) {
+  public void putToExtend(String key, String val) {
     if (this.extend == null) {
-      this.extend = new java.util.HashMap<java.lang.String,java.lang.String>();
+      this.extend = new java.util.HashMap<String, String>();
     }
     this.extend.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.lang.String> getExtend() {
+  public java.util.Map<String, String> getExtend() {
     return this.extend;
   }
 
-  public TimMessage setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend) {
+  public TimMessage setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend) {
     this.extend = extend;
     return this;
   }
@@ -678,19 +678,19 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     return (this.extra == null) ? 0 : this.extra.size();
   }
 
-  public void putToExtra(java.lang.String key, java.nio.ByteBuffer val) {
+  public void putToExtra(String key, java.nio.ByteBuffer val) {
     if (this.extra == null) {
-      this.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>();
+      this.extra = new java.util.HashMap<String,java.nio.ByteBuffer>();
     }
     this.extra.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.nio.ByteBuffer> getExtra() {
+  public java.util.Map<String,java.nio.ByteBuffer> getExtra() {
     return this.extra;
   }
 
-  public TimMessage setExtra(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.nio.ByteBuffer> extra) {
+  public TimMessage setExtra(@org.apache.thrift.annotation.Nullable java.util.Map<String,java.nio.ByteBuffer> extra) {
     this.extra = extra;
     return this;
   }
@@ -711,13 +711,13 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case MS_TYPE:
       if (value == null) {
         unsetMsType();
       } else {
-        setMsType((java.lang.Byte)value);
+        setMsType((Byte)value);
       }
       break;
 
@@ -725,7 +725,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetOdType();
       } else {
-        setOdType((java.lang.Byte)value);
+        setOdType((Byte)value);
       }
       break;
 
@@ -733,7 +733,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetId();
       } else {
-        setId((java.lang.Long)value);
+        setId((Long)value);
       }
       break;
 
@@ -741,7 +741,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetMid();
       } else {
-        setMid((java.lang.Long)value);
+        setMid((Long)value);
       }
       break;
 
@@ -749,7 +749,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetBnType();
       } else {
-        setBnType((java.lang.Integer)value);
+        setBnType((Integer)value);
       }
       break;
 
@@ -793,7 +793,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetDataString();
       } else {
-        setDataString((java.lang.String)value);
+        setDataString((String)value);
       }
       break;
 
@@ -801,7 +801,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetIsOffline();
       } else {
-        setIsOffline((java.lang.Boolean)value);
+        setIsOffline((Boolean)value);
       }
       break;
 
@@ -809,7 +809,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetTimestamp();
       } else {
-        setTimestamp((java.lang.Long)value);
+        setTimestamp((Long)value);
       }
       break;
 
@@ -817,7 +817,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetUdtype();
       } else {
-        setUdtype((java.lang.Short)value);
+        setUdtype((Short)value);
       }
       break;
 
@@ -825,7 +825,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetUdshow();
       } else {
-        setUdshow((java.lang.Short)value);
+        setUdshow((Short)value);
       }
       break;
 
@@ -833,7 +833,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetExtend();
       } else {
-        setExtend((java.util.Map<java.lang.String,java.lang.String>)value);
+        setExtend((java.util.Map<String, String>)value);
       }
       break;
 
@@ -841,7 +841,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (value == null) {
         unsetExtra();
       } else {
-        setExtra((java.util.Map<java.lang.String,java.nio.ByteBuffer>)value);
+        setExtra((java.util.Map<String,java.nio.ByteBuffer>)value);
       }
       break;
 
@@ -850,7 +850,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case MS_TYPE:
       return getMsType();
@@ -901,14 +901,14 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       return getExtra();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -945,11 +945,11 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     case EXTRA:
       return isSetExtra();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimMessage)
       return this.equals((TimMessage)that);
     return false;
@@ -1183,7 +1183,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetMsType(), other.isSetMsType());
+    lastComparison = Boolean.compare(isSetMsType(), other.isSetMsType());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1193,7 +1193,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetOdType(), other.isSetOdType());
+    lastComparison = Boolean.compare(isSetOdType(), other.isSetOdType());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1203,7 +1203,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetId(), other.isSetId());
+    lastComparison = Boolean.compare(isSetId(), other.isSetId());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1213,7 +1213,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetMid(), other.isSetMid());
+    lastComparison = Boolean.compare(isSetMid(), other.isSetMid());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1223,7 +1223,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetBnType(), other.isSetBnType());
+    lastComparison = Boolean.compare(isSetBnType(), other.isSetBnType());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1233,7 +1233,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetFromTid(), other.isSetFromTid());
+    lastComparison = Boolean.compare(isSetFromTid(), other.isSetFromTid());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1243,7 +1243,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetToTid(), other.isSetToTid());
+    lastComparison = Boolean.compare(isSetToTid(), other.isSetToTid());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1253,7 +1253,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetRoomTid(), other.isSetRoomTid());
+    lastComparison = Boolean.compare(isSetRoomTid(), other.isSetRoomTid());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1263,7 +1263,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetDataBinary(), other.isSetDataBinary());
+    lastComparison = Boolean.compare(isSetDataBinary(), other.isSetDataBinary());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1273,7 +1273,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetDataString(), other.isSetDataString());
+    lastComparison = Boolean.compare(isSetDataString(), other.isSetDataString());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1283,7 +1283,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetIsOffline(), other.isSetIsOffline());
+    lastComparison = Boolean.compare(isSetIsOffline(), other.isSetIsOffline());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1293,7 +1293,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetTimestamp(), other.isSetTimestamp());
+    lastComparison = Boolean.compare(isSetTimestamp(), other.isSetTimestamp());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1303,7 +1303,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetUdtype(), other.isSetUdtype());
+    lastComparison = Boolean.compare(isSetUdtype(), other.isSetUdtype());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1313,7 +1313,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetUdshow(), other.isSetUdshow());
+    lastComparison = Boolean.compare(isSetUdshow(), other.isSetUdshow());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1323,7 +1323,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtend(), other.isSetExtend());
+    lastComparison = Boolean.compare(isSetExtend(), other.isSetExtend());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1333,7 +1333,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtra(), other.isSetExtra());
+    lastComparison = Boolean.compare(isSetExtra(), other.isSetExtra());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -1363,8 +1363,8 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimMessage(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimMessage(");
     boolean first = true;
 
     sb.append("msType:");
@@ -1514,7 +1514,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
@@ -1663,9 +1663,9 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map104 = iprot.readMapBegin();
-                struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map104.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key105;
-                @org.apache.thrift.annotation.Nullable java.lang.String _val106;
+                struct.extend = new java.util.HashMap<String, String>(2*_map104.size);
+                @org.apache.thrift.annotation.Nullable String _key105;
+                @org.apache.thrift.annotation.Nullable String _val106;
                 for (int _i107 = 0; _i107 < _map104.size; ++_i107)
                 {
                   _key105 = iprot.readString();
@@ -1683,8 +1683,8 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map108 = iprot.readMapBegin();
-                struct.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(2*_map108.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key109;
+                struct.extra = new java.util.HashMap<String,java.nio.ByteBuffer>(2*_map108.size);
+                @org.apache.thrift.annotation.Nullable String _key109;
                 @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer _val110;
                 for (int _i111 = 0; _i111 < _map108.size; ++_i111)
                 {
@@ -1802,7 +1802,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
           oprot.writeFieldBegin(EXTEND_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extend.size()));
-            for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter112 : struct.extend.entrySet())
+            for (java.util.Map.Entry<String, String> _iter112 : struct.extend.entrySet())
             {
               oprot.writeString(_iter112.getKey());
               oprot.writeString(_iter112.getValue());
@@ -1817,7 +1817,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
           oprot.writeFieldBegin(EXTRA_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extra.size()));
-            for (java.util.Map.Entry<java.lang.String, java.nio.ByteBuffer> _iter113 : struct.extra.entrySet())
+            for (java.util.Map.Entry<String, java.nio.ByteBuffer> _iter113 : struct.extra.entrySet())
             {
               oprot.writeString(_iter113.getKey());
               oprot.writeBinary(_iter113.getValue());
@@ -1930,7 +1930,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (struct.isSetExtend()) {
         {
           oprot.writeI32(struct.extend.size());
-          for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter114 : struct.extend.entrySet())
+          for (java.util.Map.Entry<String, String> _iter114 : struct.extend.entrySet())
           {
             oprot.writeString(_iter114.getKey());
             oprot.writeString(_iter114.getValue());
@@ -1940,7 +1940,7 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (struct.isSetExtra()) {
         {
           oprot.writeI32(struct.extra.size());
-          for (java.util.Map.Entry<java.lang.String, java.nio.ByteBuffer> _iter115 : struct.extra.entrySet())
+          for (java.util.Map.Entry<String, java.nio.ByteBuffer> _iter115 : struct.extra.entrySet())
           {
             oprot.writeString(_iter115.getKey());
             oprot.writeBinary(_iter115.getValue());
@@ -2011,9 +2011,9 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (incoming.get(12)) {
         {
           org.apache.thrift.protocol.TMap _map116 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map116.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key117;
-          @org.apache.thrift.annotation.Nullable java.lang.String _val118;
+          struct.extend = new java.util.HashMap<String, String>(2*_map116.size);
+          @org.apache.thrift.annotation.Nullable String _key117;
+          @org.apache.thrift.annotation.Nullable String _val118;
           for (int _i119 = 0; _i119 < _map116.size; ++_i119)
           {
             _key117 = iprot.readString();
@@ -2026,8 +2026,8 @@ public class TimMessage implements org.apache.thrift.TBase<TimMessage, TimMessag
       if (incoming.get(13)) {
         {
           org.apache.thrift.protocol.TMap _map120 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extra = new java.util.HashMap<java.lang.String,java.nio.ByteBuffer>(2*_map120.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key121;
+          struct.extra = new java.util.HashMap<String,java.nio.ByteBuffer>(2*_map120.size);
+          @org.apache.thrift.annotation.Nullable String _key121;
           @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer _val122;
           for (int _i123 = 0; _i123 < _map120.size; ++_i123)
           {
