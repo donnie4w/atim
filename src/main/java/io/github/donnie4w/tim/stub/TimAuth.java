@@ -22,13 +22,13 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new TimAuthStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TimAuthTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable java.lang.String name; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String pwd; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String domain; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String resource; // optional
+  public @org.apache.thrift.annotation.Nullable String name; // optional
+  public @org.apache.thrift.annotation.Nullable String pwd; // optional
+  public @org.apache.thrift.annotation.Nullable String domain; // optional
+  public @org.apache.thrift.annotation.Nullable String resource; // optional
   public byte termtyp; // optional
   public long token; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -40,7 +40,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     TOKEN((short)6, "token"),
     EXTEND((short)7, "extend");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -79,7 +79,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -87,14 +87,14 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -105,7 +105,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -161,7 +161,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     this.termtyp = other.termtyp;
     this.token = other.token;
     if (other.isSetExtend()) {
-      java.util.Map<java.lang.String,java.lang.String> __this__extend = new java.util.HashMap<java.lang.String,java.lang.String>(other.extend);
+      java.util.Map<String, String> __this__extend = new java.util.HashMap<String, String>(other.extend);
       this.extend = __this__extend;
     }
   }
@@ -185,11 +185,11 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public TimAuth setName(@org.apache.thrift.annotation.Nullable java.lang.String name) {
+  public TimAuth setName(@org.apache.thrift.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -210,11 +210,11 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getPwd() {
+  public String getPwd() {
     return this.pwd;
   }
 
-  public TimAuth setPwd(@org.apache.thrift.annotation.Nullable java.lang.String pwd) {
+  public TimAuth setPwd(@org.apache.thrift.annotation.Nullable String pwd) {
     this.pwd = pwd;
     return this;
   }
@@ -235,11 +235,11 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getDomain() {
+  public String getDomain() {
     return this.domain;
   }
 
-  public TimAuth setDomain(@org.apache.thrift.annotation.Nullable java.lang.String domain) {
+  public TimAuth setDomain(@org.apache.thrift.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -260,11 +260,11 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getResource() {
+  public String getResource() {
     return this.resource;
   }
 
-  public TimAuth setResource(@org.apache.thrift.annotation.Nullable java.lang.String resource) {
+  public TimAuth setResource(@org.apache.thrift.annotation.Nullable String resource) {
     this.resource = resource;
     return this;
   }
@@ -334,19 +334,19 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     return (this.extend == null) ? 0 : this.extend.size();
   }
 
-  public void putToExtend(java.lang.String key, java.lang.String val) {
+  public void putToExtend(String key, String val) {
     if (this.extend == null) {
-      this.extend = new java.util.HashMap<java.lang.String,java.lang.String>();
+      this.extend = new java.util.HashMap<String, String>();
     }
     this.extend.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.lang.String> getExtend() {
+  public java.util.Map<String, String> getExtend() {
     return this.extend;
   }
 
-  public TimAuth setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend) {
+  public TimAuth setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend) {
     this.extend = extend;
     return this;
   }
@@ -367,13 +367,13 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case NAME:
       if (value == null) {
         unsetName();
       } else {
-        setName((java.lang.String)value);
+        setName((String)value);
       }
       break;
 
@@ -381,7 +381,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetPwd();
       } else {
-        setPwd((java.lang.String)value);
+        setPwd((String)value);
       }
       break;
 
@@ -389,7 +389,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetDomain();
       } else {
-        setDomain((java.lang.String)value);
+        setDomain((String)value);
       }
       break;
 
@@ -397,7 +397,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetResource();
       } else {
-        setResource((java.lang.String)value);
+        setResource((String)value);
       }
       break;
 
@@ -405,7 +405,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetTermtyp();
       } else {
-        setTermtyp((java.lang.Byte)value);
+        setTermtyp((Byte)value);
       }
       break;
 
@@ -413,7 +413,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetToken();
       } else {
-        setToken((java.lang.Long)value);
+        setToken((Long)value);
       }
       break;
 
@@ -421,7 +421,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (value == null) {
         unsetExtend();
       } else {
-        setExtend((java.util.Map<java.lang.String,java.lang.String>)value);
+        setExtend((java.util.Map<String, String>)value);
       }
       break;
 
@@ -430,7 +430,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case NAME:
       return getName();
@@ -454,14 +454,14 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       return getExtend();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -480,11 +480,11 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     case EXTEND:
       return isSetExtend();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimAuth)
       return this.equals((TimAuth)that);
     return false;
@@ -605,7 +605,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetName(), other.isSetName());
+    lastComparison = Boolean.compare(isSetName(), other.isSetName());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -615,7 +615,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetPwd(), other.isSetPwd());
+    lastComparison = Boolean.compare(isSetPwd(), other.isSetPwd());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -625,7 +625,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetDomain(), other.isSetDomain());
+    lastComparison = Boolean.compare(isSetDomain(), other.isSetDomain());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -635,7 +635,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetResource(), other.isSetResource());
+    lastComparison = Boolean.compare(isSetResource(), other.isSetResource());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -645,7 +645,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetTermtyp(), other.isSetTermtyp());
+    lastComparison = Boolean.compare(isSetTermtyp(), other.isSetTermtyp());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -655,7 +655,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetToken(), other.isSetToken());
+    lastComparison = Boolean.compare(isSetToken(), other.isSetToken());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -665,7 +665,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtend(), other.isSetExtend());
+    lastComparison = Boolean.compare(isSetExtend(), other.isSetExtend());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -695,8 +695,8 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimAuth(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimAuth(");
     boolean first = true;
 
     if (isSetName()) {
@@ -777,7 +777,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
@@ -859,9 +859,9 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map66 = iprot.readMapBegin();
-                struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map66.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key67;
-                @org.apache.thrift.annotation.Nullable java.lang.String _val68;
+                struct.extend = new java.util.HashMap<String, String>(2*_map66.size);
+                @org.apache.thrift.annotation.Nullable String _key67;
+                @org.apache.thrift.annotation.Nullable String _val68;
                 for (int _i69 = 0; _i69 < _map66.size; ++_i69)
                 {
                   _key67 = iprot.readString();
@@ -934,7 +934,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
           oprot.writeFieldBegin(EXTEND_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extend.size()));
-            for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter70 : struct.extend.entrySet())
+            for (java.util.Map.Entry<String, String> _iter70 : struct.extend.entrySet())
             {
               oprot.writeString(_iter70.getKey());
               oprot.writeString(_iter70.getValue());
@@ -1006,7 +1006,7 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (struct.isSetExtend()) {
         {
           oprot.writeI32(struct.extend.size());
-          for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter71 : struct.extend.entrySet())
+          for (java.util.Map.Entry<String, String> _iter71 : struct.extend.entrySet())
           {
             oprot.writeString(_iter71.getKey());
             oprot.writeString(_iter71.getValue());
@@ -1046,9 +1046,9 @@ public class TimAuth implements org.apache.thrift.TBase<TimAuth, TimAuth._Fields
       if (incoming.get(6)) {
         {
           org.apache.thrift.protocol.TMap _map72 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map72.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key73;
-          @org.apache.thrift.annotation.Nullable java.lang.String _val74;
+          struct.extend = new java.util.HashMap<String, String>(2*_map72.size);
+          @org.apache.thrift.annotation.Nullable String _key73;
+          @org.apache.thrift.annotation.Nullable String _val74;
           for (int _i75 = 0; _i75 < _map72.size; ++_i75)
           {
             _key73 = iprot.readString();
