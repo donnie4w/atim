@@ -24,7 +24,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
   public byte timType; // required
   public @org.apache.thrift.annotation.Nullable TimError error; // optional
   public long t; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String n; // optional
+  public @org.apache.thrift.annotation.Nullable String n; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -34,7 +34,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
     T((short)4, "t"),
     N((short)5, "n");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -69,7 +69,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -77,14 +77,14 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -95,7 +95,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -265,11 +265,11 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getN() {
+  public String getN() {
     return this.n;
   }
 
-  public TimAck setN(@org.apache.thrift.annotation.Nullable java.lang.String n) {
+  public TimAck setN(@org.apache.thrift.annotation.Nullable String n) {
     this.n = n;
     return this;
   }
@@ -290,13 +290,13 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case OK:
       if (value == null) {
         unsetOk();
       } else {
-        setOk((java.lang.Boolean)value);
+        setOk((Boolean)value);
       }
       break;
 
@@ -304,7 +304,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
       if (value == null) {
         unsetTimType();
       } else {
-        setTimType((java.lang.Byte)value);
+        setTimType((Byte)value);
       }
       break;
 
@@ -320,7 +320,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
       if (value == null) {
         unsetT();
       } else {
-        setT((java.lang.Long)value);
+        setT((Long)value);
       }
       break;
 
@@ -328,7 +328,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
       if (value == null) {
         unsetN();
       } else {
-        setN((java.lang.String)value);
+        setN((String)value);
       }
       break;
 
@@ -337,7 +337,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case OK:
       return isOk();
@@ -355,14 +355,14 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
       return getN();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -377,11 +377,11 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
     case N:
       return isSetN();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimAck)
       return this.equals((TimAck)that);
     return false;
@@ -472,7 +472,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetOk(), other.isSetOk());
+    lastComparison = Boolean.compare(isSetOk(), other.isSetOk());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -482,7 +482,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetTimType(), other.isSetTimType());
+    lastComparison = Boolean.compare(isSetTimType(), other.isSetTimType());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -492,7 +492,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetError(), other.isSetError());
+    lastComparison = Boolean.compare(isSetError(), other.isSetError());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -502,7 +502,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetT(), other.isSetT());
+    lastComparison = Boolean.compare(isSetT(), other.isSetT());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -512,7 +512,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetN(), other.isSetN());
+    lastComparison = Boolean.compare(isSetN(), other.isSetN());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -542,8 +542,8 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimAck(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimAck(");
     boolean first = true;
 
     sb.append("ok:");
@@ -601,7 +601,7 @@ public class TimAck implements org.apache.thrift.TBase<TimAck, TimAck._Fields>, 
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
