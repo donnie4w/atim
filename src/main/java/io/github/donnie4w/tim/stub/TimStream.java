@@ -21,10 +21,10 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TimStreamTupleSchemeFactory();
 
   public long id; // required
-  public @org.apache.thrift.annotation.Nullable java.lang.String VNode; // required
+  public @org.apache.thrift.annotation.Nullable String VNode; // required
   public byte dtype; // optional
   public @org.apache.thrift.annotation.Nullable java.nio.ByteBuffer body; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String fromNode; // required
+  public @org.apache.thrift.annotation.Nullable String fromNode; // required
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -34,7 +34,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
     BODY((short)4, "body"),
     FROM_NODE((short)5, "fromNode");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -69,7 +69,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -77,14 +77,14 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -95,7 +95,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -127,8 +127,8 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
 
   public TimStream(
     long id,
-    java.lang.String VNode,
-    java.lang.String fromNode)
+    String VNode,
+    String fromNode)
   {
     this();
     this.id = id;
@@ -195,11 +195,11 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getVNode() {
+  public String getVNode() {
     return this.VNode;
   }
 
-  public TimStream setVNode(@org.apache.thrift.annotation.Nullable java.lang.String VNode) {
+  public TimStream setVNode(@org.apache.thrift.annotation.Nullable String VNode) {
     this.VNode = VNode;
     return this;
   }
@@ -277,11 +277,11 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getFromNode() {
+  public String getFromNode() {
     return this.fromNode;
   }
 
-  public TimStream setFromNode(@org.apache.thrift.annotation.Nullable java.lang.String fromNode) {
+  public TimStream setFromNode(@org.apache.thrift.annotation.Nullable String fromNode) {
     this.fromNode = fromNode;
     return this;
   }
@@ -302,13 +302,13 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case ID:
       if (value == null) {
         unsetId();
       } else {
-        setId((java.lang.Long)value);
+        setId((Long)value);
       }
       break;
 
@@ -316,7 +316,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
       if (value == null) {
         unsetVNode();
       } else {
-        setVNode((java.lang.String)value);
+        setVNode((String)value);
       }
       break;
 
@@ -324,7 +324,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
       if (value == null) {
         unsetDtype();
       } else {
-        setDtype((java.lang.Byte)value);
+        setDtype((Byte)value);
       }
       break;
 
@@ -344,7 +344,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
       if (value == null) {
         unsetFromNode();
       } else {
-        setFromNode((java.lang.String)value);
+        setFromNode((String)value);
       }
       break;
 
@@ -353,7 +353,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case ID:
       return getId();
@@ -371,14 +371,14 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
       return getFromNode();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -393,11 +393,11 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
     case FROM_NODE:
       return isSetFromNode();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimStream)
       return this.equals((TimStream)that);
     return false;
@@ -490,7 +490,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetId(), other.isSetId());
+    lastComparison = Boolean.compare(isSetId(), other.isSetId());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -500,7 +500,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetVNode(), other.isSetVNode());
+    lastComparison = Boolean.compare(isSetVNode(), other.isSetVNode());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -510,7 +510,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetDtype(), other.isSetDtype());
+    lastComparison = Boolean.compare(isSetDtype(), other.isSetDtype());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -520,7 +520,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetBody(), other.isSetBody());
+    lastComparison = Boolean.compare(isSetBody(), other.isSetBody());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -530,7 +530,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetFromNode(), other.isSetFromNode());
+    lastComparison = Boolean.compare(isSetFromNode(), other.isSetFromNode());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -560,8 +560,8 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimStream(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimStream(");
     boolean first = true;
 
     sb.append("id:");
@@ -623,7 +623,7 @@ public class TimStream implements org.apache.thrift.TBase<TimStream, TimStream._
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
