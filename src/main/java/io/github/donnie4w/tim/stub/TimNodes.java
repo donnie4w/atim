@@ -21,10 +21,10 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TimNodesTupleSchemeFactory();
 
   public int ntype; // required
-  public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.String> nodelist; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,TimUserBean> usermap; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,TimRoomBean> roommap; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String node; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.List<String> nodelist; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String,TimUserBean> usermap; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String,TimRoomBean> roommap; // optional
+  public @org.apache.thrift.annotation.Nullable String node; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -34,7 +34,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     ROOMMAP((short)4, "roommap"),
     NODE((short)5, "node");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -69,7 +69,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -77,14 +77,14 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -95,7 +95,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -144,17 +144,17 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     __isset_bitfield = other.__isset_bitfield;
     this.ntype = other.ntype;
     if (other.isSetNodelist()) {
-      java.util.List<java.lang.String> __this__nodelist = new java.util.ArrayList<java.lang.String>(other.nodelist);
+      java.util.List<String> __this__nodelist = new java.util.ArrayList<String>(other.nodelist);
       this.nodelist = __this__nodelist;
     }
     if (other.isSetUsermap()) {
-      java.util.Map<java.lang.String,TimUserBean> __this__usermap = new java.util.HashMap<java.lang.String,TimUserBean>(other.usermap.size());
-      for (java.util.Map.Entry<java.lang.String, TimUserBean> other_element : other.usermap.entrySet()) {
+      java.util.Map<String,TimUserBean> __this__usermap = new java.util.HashMap<String,TimUserBean>(other.usermap.size());
+      for (java.util.Map.Entry<String, TimUserBean> other_element : other.usermap.entrySet()) {
 
-        java.lang.String other_element_key = other_element.getKey();
+        String other_element_key = other_element.getKey();
         TimUserBean other_element_value = other_element.getValue();
 
-        java.lang.String __this__usermap_copy_key = other_element_key;
+        String __this__usermap_copy_key = other_element_key;
 
         TimUserBean __this__usermap_copy_value = new TimUserBean(other_element_value);
 
@@ -163,13 +163,13 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       this.usermap = __this__usermap;
     }
     if (other.isSetRoommap()) {
-      java.util.Map<java.lang.String,TimRoomBean> __this__roommap = new java.util.HashMap<java.lang.String,TimRoomBean>(other.roommap.size());
-      for (java.util.Map.Entry<java.lang.String, TimRoomBean> other_element : other.roommap.entrySet()) {
+      java.util.Map<String,TimRoomBean> __this__roommap = new java.util.HashMap<String,TimRoomBean>(other.roommap.size());
+      for (java.util.Map.Entry<String, TimRoomBean> other_element : other.roommap.entrySet()) {
 
-        java.lang.String other_element_key = other_element.getKey();
+        String other_element_key = other_element.getKey();
         TimRoomBean other_element_value = other_element.getValue();
 
-        java.lang.String __this__roommap_copy_key = other_element_key;
+        String __this__roommap_copy_key = other_element_key;
 
         TimRoomBean __this__roommap_copy_value = new TimRoomBean(other_element_value);
 
@@ -225,23 +225,23 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Iterator<java.lang.String> getNodelistIterator() {
+  public java.util.Iterator<String> getNodelistIterator() {
     return (this.nodelist == null) ? null : this.nodelist.iterator();
   }
 
-  public void addToNodelist(java.lang.String elem) {
+  public void addToNodelist(String elem) {
     if (this.nodelist == null) {
-      this.nodelist = new java.util.ArrayList<java.lang.String>();
+      this.nodelist = new java.util.ArrayList<String>();
     }
     this.nodelist.add(elem);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.List<java.lang.String> getNodelist() {
+  public java.util.List<String> getNodelist() {
     return this.nodelist;
   }
 
-  public TimNodes setNodelist(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.String> nodelist) {
+  public TimNodes setNodelist(@org.apache.thrift.annotation.Nullable java.util.List<String> nodelist) {
     this.nodelist = nodelist;
     return this;
   }
@@ -265,19 +265,19 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     return (this.usermap == null) ? 0 : this.usermap.size();
   }
 
-  public void putToUsermap(java.lang.String key, TimUserBean val) {
+  public void putToUsermap(String key, TimUserBean val) {
     if (this.usermap == null) {
-      this.usermap = new java.util.HashMap<java.lang.String,TimUserBean>();
+      this.usermap = new java.util.HashMap<String,TimUserBean>();
     }
     this.usermap.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,TimUserBean> getUsermap() {
+  public java.util.Map<String,TimUserBean> getUsermap() {
     return this.usermap;
   }
 
-  public TimNodes setUsermap(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,TimUserBean> usermap) {
+  public TimNodes setUsermap(@org.apache.thrift.annotation.Nullable java.util.Map<String,TimUserBean> usermap) {
     this.usermap = usermap;
     return this;
   }
@@ -301,19 +301,19 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     return (this.roommap == null) ? 0 : this.roommap.size();
   }
 
-  public void putToRoommap(java.lang.String key, TimRoomBean val) {
+  public void putToRoommap(String key, TimRoomBean val) {
     if (this.roommap == null) {
-      this.roommap = new java.util.HashMap<java.lang.String,TimRoomBean>();
+      this.roommap = new java.util.HashMap<String,TimRoomBean>();
     }
     this.roommap.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,TimRoomBean> getRoommap() {
+  public java.util.Map<String,TimRoomBean> getRoommap() {
     return this.roommap;
   }
 
-  public TimNodes setRoommap(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,TimRoomBean> roommap) {
+  public TimNodes setRoommap(@org.apache.thrift.annotation.Nullable java.util.Map<String,TimRoomBean> roommap) {
     this.roommap = roommap;
     return this;
   }
@@ -334,11 +334,11 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getNode() {
+  public String getNode() {
     return this.node;
   }
 
-  public TimNodes setNode(@org.apache.thrift.annotation.Nullable java.lang.String node) {
+  public TimNodes setNode(@org.apache.thrift.annotation.Nullable String node) {
     this.node = node;
     return this;
   }
@@ -359,13 +359,13 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case NTYPE:
       if (value == null) {
         unsetNtype();
       } else {
-        setNtype((java.lang.Integer)value);
+        setNtype((Integer)value);
       }
       break;
 
@@ -373,7 +373,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (value == null) {
         unsetNodelist();
       } else {
-        setNodelist((java.util.List<java.lang.String>)value);
+        setNodelist((java.util.List<String>)value);
       }
       break;
 
@@ -381,7 +381,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (value == null) {
         unsetUsermap();
       } else {
-        setUsermap((java.util.Map<java.lang.String,TimUserBean>)value);
+        setUsermap((java.util.Map<String,TimUserBean>)value);
       }
       break;
 
@@ -389,7 +389,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (value == null) {
         unsetRoommap();
       } else {
-        setRoommap((java.util.Map<java.lang.String,TimRoomBean>)value);
+        setRoommap((java.util.Map<String,TimRoomBean>)value);
       }
       break;
 
@@ -397,7 +397,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (value == null) {
         unsetNode();
       } else {
-        setNode((java.lang.String)value);
+        setNode((String)value);
       }
       break;
 
@@ -406,7 +406,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case NTYPE:
       return getNtype();
@@ -424,14 +424,14 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       return getNode();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -446,11 +446,11 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     case NODE:
       return isSetNode();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimNodes)
       return this.equals((TimNodes)that);
     return false;
@@ -543,7 +543,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetNtype(), other.isSetNtype());
+    lastComparison = Boolean.compare(isSetNtype(), other.isSetNtype());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -553,7 +553,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetNodelist(), other.isSetNodelist());
+    lastComparison = Boolean.compare(isSetNodelist(), other.isSetNodelist());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -563,7 +563,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetUsermap(), other.isSetUsermap());
+    lastComparison = Boolean.compare(isSetUsermap(), other.isSetUsermap());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -573,7 +573,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetRoommap(), other.isSetRoommap());
+    lastComparison = Boolean.compare(isSetRoommap(), other.isSetRoommap());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -583,7 +583,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetNode(), other.isSetNode());
+    lastComparison = Boolean.compare(isSetNode(), other.isSetNode());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -613,8 +613,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimNodes(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimNodes(");
     boolean first = true;
 
     sb.append("ntype:");
@@ -678,7 +678,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
@@ -720,8 +720,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
             if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
               {
                 org.apache.thrift.protocol.TList _list124 = iprot.readListBegin();
-                struct.nodelist = new java.util.ArrayList<java.lang.String>(_list124.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _elem125;
+                struct.nodelist = new java.util.ArrayList<String>(_list124.size);
+                @org.apache.thrift.annotation.Nullable String _elem125;
                 for (int _i126 = 0; _i126 < _list124.size; ++_i126)
                 {
                   _elem125 = iprot.readString();
@@ -738,8 +738,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map127 = iprot.readMapBegin();
-                struct.usermap = new java.util.HashMap<java.lang.String,TimUserBean>(2*_map127.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key128;
+                struct.usermap = new java.util.HashMap<String,TimUserBean>(2*_map127.size);
+                @org.apache.thrift.annotation.Nullable String _key128;
                 @org.apache.thrift.annotation.Nullable TimUserBean _val129;
                 for (int _i130 = 0; _i130 < _map127.size; ++_i130)
                 {
@@ -759,8 +759,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map131 = iprot.readMapBegin();
-                struct.roommap = new java.util.HashMap<java.lang.String,TimRoomBean>(2*_map131.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key132;
+                struct.roommap = new java.util.HashMap<String,TimRoomBean>(2*_map131.size);
+                @org.apache.thrift.annotation.Nullable String _key132;
                 @org.apache.thrift.annotation.Nullable TimRoomBean _val133;
                 for (int _i134 = 0; _i134 < _map131.size; ++_i134)
                 {
@@ -811,7 +811,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
           oprot.writeFieldBegin(NODELIST_FIELD_DESC);
           {
             oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.STRING, struct.nodelist.size()));
-            for (java.lang.String _iter135 : struct.nodelist)
+            for (String _iter135 : struct.nodelist)
             {
               oprot.writeString(_iter135);
             }
@@ -825,7 +825,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
           oprot.writeFieldBegin(USERMAP_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRUCT, struct.usermap.size()));
-            for (java.util.Map.Entry<java.lang.String, TimUserBean> _iter136 : struct.usermap.entrySet())
+            for (java.util.Map.Entry<String, TimUserBean> _iter136 : struct.usermap.entrySet())
             {
               oprot.writeString(_iter136.getKey());
               _iter136.getValue().write(oprot);
@@ -840,7 +840,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
           oprot.writeFieldBegin(ROOMMAP_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRUCT, struct.roommap.size()));
-            for (java.util.Map.Entry<java.lang.String, TimRoomBean> _iter137 : struct.roommap.entrySet())
+            for (java.util.Map.Entry<String, TimRoomBean> _iter137 : struct.roommap.entrySet())
             {
               oprot.writeString(_iter137.getKey());
               _iter137.getValue().write(oprot);
@@ -893,7 +893,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (struct.isSetNodelist()) {
         {
           oprot.writeI32(struct.nodelist.size());
-          for (java.lang.String _iter138 : struct.nodelist)
+          for (String _iter138 : struct.nodelist)
           {
             oprot.writeString(_iter138);
           }
@@ -902,7 +902,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (struct.isSetUsermap()) {
         {
           oprot.writeI32(struct.usermap.size());
-          for (java.util.Map.Entry<java.lang.String, TimUserBean> _iter139 : struct.usermap.entrySet())
+          for (java.util.Map.Entry<String, TimUserBean> _iter139 : struct.usermap.entrySet())
           {
             oprot.writeString(_iter139.getKey());
             _iter139.getValue().write(oprot);
@@ -912,7 +912,7 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (struct.isSetRoommap()) {
         {
           oprot.writeI32(struct.roommap.size());
-          for (java.util.Map.Entry<java.lang.String, TimRoomBean> _iter140 : struct.roommap.entrySet())
+          for (java.util.Map.Entry<String, TimRoomBean> _iter140 : struct.roommap.entrySet())
           {
             oprot.writeString(_iter140.getKey());
             _iter140.getValue().write(oprot);
@@ -933,8 +933,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (incoming.get(0)) {
         {
           org.apache.thrift.protocol.TList _list141 = iprot.readListBegin(org.apache.thrift.protocol.TType.STRING);
-          struct.nodelist = new java.util.ArrayList<java.lang.String>(_list141.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _elem142;
+          struct.nodelist = new java.util.ArrayList<String>(_list141.size);
+          @org.apache.thrift.annotation.Nullable String _elem142;
           for (int _i143 = 0; _i143 < _list141.size; ++_i143)
           {
             _elem142 = iprot.readString();
@@ -946,8 +946,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (incoming.get(1)) {
         {
           org.apache.thrift.protocol.TMap _map144 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRUCT); 
-          struct.usermap = new java.util.HashMap<java.lang.String,TimUserBean>(2*_map144.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key145;
+          struct.usermap = new java.util.HashMap<String,TimUserBean>(2*_map144.size);
+          @org.apache.thrift.annotation.Nullable String _key145;
           @org.apache.thrift.annotation.Nullable TimUserBean _val146;
           for (int _i147 = 0; _i147 < _map144.size; ++_i147)
           {
@@ -962,8 +962,8 @@ public class TimNodes implements org.apache.thrift.TBase<TimNodes, TimNodes._Fie
       if (incoming.get(2)) {
         {
           org.apache.thrift.protocol.TMap _map148 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRUCT); 
-          struct.roommap = new java.util.HashMap<java.lang.String,TimRoomBean>(2*_map148.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key149;
+          struct.roommap = new java.util.HashMap<String,TimRoomBean>(2*_map148.size);
+          @org.apache.thrift.annotation.Nullable String _key149;
           @org.apache.thrift.annotation.Nullable TimRoomBean _val150;
           for (int _i151 = 0; _i151 < _map148.size; ++_i151)
           {
