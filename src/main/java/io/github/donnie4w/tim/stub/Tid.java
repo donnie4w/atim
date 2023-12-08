@@ -20,11 +20,11 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new TidStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TidTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable java.lang.String node; // required
-  public @org.apache.thrift.annotation.Nullable java.lang.String domain; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String resource; // optional
+  public @org.apache.thrift.annotation.Nullable String node; // required
+  public @org.apache.thrift.annotation.Nullable String domain; // optional
+  public @org.apache.thrift.annotation.Nullable String resource; // optional
   public byte termtyp; // optional
-  public @org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend; // optional
+  public @org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -34,7 +34,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     TERMTYP((short)4, "termtyp"),
     EXTEND((short)5, "extend");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -69,7 +69,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -77,14 +77,14 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -95,7 +95,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -127,7 +127,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   public Tid(
-    java.lang.String node)
+    String node)
   {
     this();
     this.node = node;
@@ -149,7 +149,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     }
     this.termtyp = other.termtyp;
     if (other.isSetExtend()) {
-      java.util.Map<java.lang.String,java.lang.String> __this__extend = new java.util.HashMap<java.lang.String,java.lang.String>(other.extend);
+      java.util.Map<String, String> __this__extend = new java.util.HashMap<String, String>(other.extend);
       this.extend = __this__extend;
     }
   }
@@ -170,11 +170,11 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getNode() {
+  public String getNode() {
     return this.node;
   }
 
-  public Tid setNode(@org.apache.thrift.annotation.Nullable java.lang.String node) {
+  public Tid setNode(@org.apache.thrift.annotation.Nullable String node) {
     this.node = node;
     return this;
   }
@@ -195,11 +195,11 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getDomain() {
+  public String getDomain() {
     return this.domain;
   }
 
-  public Tid setDomain(@org.apache.thrift.annotation.Nullable java.lang.String domain) {
+  public Tid setDomain(@org.apache.thrift.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -220,11 +220,11 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getResource() {
+  public String getResource() {
     return this.resource;
   }
 
-  public Tid setResource(@org.apache.thrift.annotation.Nullable java.lang.String resource) {
+  public Tid setResource(@org.apache.thrift.annotation.Nullable String resource) {
     this.resource = resource;
     return this;
   }
@@ -271,19 +271,19 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     return (this.extend == null) ? 0 : this.extend.size();
   }
 
-  public void putToExtend(java.lang.String key, java.lang.String val) {
+  public void putToExtend(String key, String val) {
     if (this.extend == null) {
-      this.extend = new java.util.HashMap<java.lang.String,java.lang.String>();
+      this.extend = new java.util.HashMap<String, String>();
     }
     this.extend.put(key, val);
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.util.Map<java.lang.String,java.lang.String> getExtend() {
+  public java.util.Map<String, String> getExtend() {
     return this.extend;
   }
 
-  public Tid setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<java.lang.String,java.lang.String> extend) {
+  public Tid setExtend(@org.apache.thrift.annotation.Nullable java.util.Map<String, String> extend) {
     this.extend = extend;
     return this;
   }
@@ -304,13 +304,13 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case NODE:
       if (value == null) {
         unsetNode();
       } else {
-        setNode((java.lang.String)value);
+        setNode((String)value);
       }
       break;
 
@@ -318,7 +318,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (value == null) {
         unsetDomain();
       } else {
-        setDomain((java.lang.String)value);
+        setDomain((String)value);
       }
       break;
 
@@ -326,7 +326,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (value == null) {
         unsetResource();
       } else {
-        setResource((java.lang.String)value);
+        setResource((String)value);
       }
       break;
 
@@ -334,7 +334,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (value == null) {
         unsetTermtyp();
       } else {
-        setTermtyp((java.lang.Byte)value);
+        setTermtyp((Byte)value);
       }
       break;
 
@@ -342,7 +342,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (value == null) {
         unsetExtend();
       } else {
-        setExtend((java.util.Map<java.lang.String,java.lang.String>)value);
+        setExtend((java.util.Map<String, String>)value);
       }
       break;
 
@@ -351,7 +351,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case NODE:
       return getNode();
@@ -369,14 +369,14 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       return getExtend();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -391,11 +391,11 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     case EXTEND:
       return isSetExtend();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof Tid)
       return this.equals((Tid)that);
     return false;
@@ -490,7 +490,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetNode(), other.isSetNode());
+    lastComparison = Boolean.compare(isSetNode(), other.isSetNode());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -500,7 +500,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetDomain(), other.isSetDomain());
+    lastComparison = Boolean.compare(isSetDomain(), other.isSetDomain());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -510,7 +510,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetResource(), other.isSetResource());
+    lastComparison = Boolean.compare(isSetResource(), other.isSetResource());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -520,7 +520,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetTermtyp(), other.isSetTermtyp());
+    lastComparison = Boolean.compare(isSetTermtyp(), other.isSetTermtyp());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -530,7 +530,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetExtend(), other.isSetExtend());
+    lastComparison = Boolean.compare(isSetExtend(), other.isSetExtend());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -560,8 +560,8 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("Tid(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("Tid(");
     boolean first = true;
 
     sb.append("node:");
@@ -627,7 +627,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
@@ -693,9 +693,9 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
             if (schemeField.type == org.apache.thrift.protocol.TType.MAP) {
               {
                 org.apache.thrift.protocol.TMap _map0 = iprot.readMapBegin();
-                struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map0.size);
-                @org.apache.thrift.annotation.Nullable java.lang.String _key1;
-                @org.apache.thrift.annotation.Nullable java.lang.String _val2;
+                struct.extend = new java.util.HashMap<String, String>(2*_map0.size);
+                @org.apache.thrift.annotation.Nullable String _key1;
+                @org.apache.thrift.annotation.Nullable String _val2;
                 for (int _i3 = 0; _i3 < _map0.size; ++_i3)
                 {
                   _key1 = iprot.readString();
@@ -754,7 +754,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
           oprot.writeFieldBegin(EXTEND_FIELD_DESC);
           {
             oprot.writeMapBegin(new org.apache.thrift.protocol.TMap(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING, struct.extend.size()));
-            for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter4 : struct.extend.entrySet())
+            for (java.util.Map.Entry<String, String> _iter4 : struct.extend.entrySet())
             {
               oprot.writeString(_iter4.getKey());
               oprot.writeString(_iter4.getValue());
@@ -809,7 +809,7 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (struct.isSetExtend()) {
         {
           oprot.writeI32(struct.extend.size());
-          for (java.util.Map.Entry<java.lang.String, java.lang.String> _iter5 : struct.extend.entrySet())
+          for (java.util.Map.Entry<String, String> _iter5 : struct.extend.entrySet())
           {
             oprot.writeString(_iter5.getKey());
             oprot.writeString(_iter5.getValue());
@@ -839,9 +839,9 @@ public class Tid implements org.apache.thrift.TBase<Tid, Tid._Fields>, java.io.S
       if (incoming.get(3)) {
         {
           org.apache.thrift.protocol.TMap _map6 = iprot.readMapBegin(org.apache.thrift.protocol.TType.STRING, org.apache.thrift.protocol.TType.STRING); 
-          struct.extend = new java.util.HashMap<java.lang.String,java.lang.String>(2*_map6.size);
-          @org.apache.thrift.annotation.Nullable java.lang.String _key7;
-          @org.apache.thrift.annotation.Nullable java.lang.String _val8;
+          struct.extend = new java.util.HashMap<String, String>(2*_map6.size);
+          @org.apache.thrift.annotation.Nullable String _key7;
+          @org.apache.thrift.annotation.Nullable String _val8;
           for (int _i9 = 0; _i9 < _map6.size; ++_i9)
           {
             _key7 = iprot.readString();
