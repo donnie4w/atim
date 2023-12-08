@@ -23,12 +23,12 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new TimReqTupleSchemeFactory();
 
   public int rtype; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String node; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String node2; // optional
+  public @org.apache.thrift.annotation.Nullable String node; // optional
+  public @org.apache.thrift.annotation.Nullable String node2; // optional
   public long reqInt; // optional
   public long reqInt2; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String reqStr; // optional
-  public @org.apache.thrift.annotation.Nullable java.lang.String reqStr2; // optional
+  public @org.apache.thrift.annotation.Nullable String reqStr; // optional
+  public @org.apache.thrift.annotation.Nullable String reqStr2; // optional
 
   /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -40,7 +40,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
     REQ_STR((short)6, "reqStr"),
     REQ_STR2((short)7, "reqStr2");
 
-    private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+    private static final java.util.Map<String, _Fields> byName = new java.util.HashMap<String, _Fields>();
 
     static {
       for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
@@ -79,7 +79,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
-      if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+      if (fields == null) throw new IllegalArgumentException("Field " + fieldId + " doesn't exist!");
       return fields;
     }
 
@@ -87,14 +87,14 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
      * Find the _Fields constant that matches name, or null if its not found.
      */
     @org.apache.thrift.annotation.Nullable
-    public static _Fields findByName(java.lang.String name) {
+    public static _Fields findByName(String name) {
       return byName.get(name);
     }
 
     private final short _thriftId;
-    private final java.lang.String _fieldName;
+    private final String _fieldName;
 
-    _Fields(short thriftId, java.lang.String fieldName) {
+    _Fields(short thriftId, String fieldName) {
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
@@ -105,7 +105,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
     }
 
     @Override
-    public java.lang.String getFieldName() {
+    public String getFieldName() {
       return _fieldName;
     }
   }
@@ -205,11 +205,11 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getNode() {
+  public String getNode() {
     return this.node;
   }
 
-  public TimReq setNode(@org.apache.thrift.annotation.Nullable java.lang.String node) {
+  public TimReq setNode(@org.apache.thrift.annotation.Nullable String node) {
     this.node = node;
     return this;
   }
@@ -230,11 +230,11 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getNode2() {
+  public String getNode2() {
     return this.node2;
   }
 
-  public TimReq setNode2(@org.apache.thrift.annotation.Nullable java.lang.String node2) {
+  public TimReq setNode2(@org.apache.thrift.annotation.Nullable String node2) {
     this.node2 = node2;
     return this;
   }
@@ -301,11 +301,11 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getReqStr() {
+  public String getReqStr() {
     return this.reqStr;
   }
 
-  public TimReq setReqStr(@org.apache.thrift.annotation.Nullable java.lang.String reqStr) {
+  public TimReq setReqStr(@org.apache.thrift.annotation.Nullable String reqStr) {
     this.reqStr = reqStr;
     return this;
   }
@@ -326,11 +326,11 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
-  public java.lang.String getReqStr2() {
+  public String getReqStr2() {
     return this.reqStr2;
   }
 
-  public TimReq setReqStr2(@org.apache.thrift.annotation.Nullable java.lang.String reqStr2) {
+  public TimReq setReqStr2(@org.apache.thrift.annotation.Nullable String reqStr2) {
     this.reqStr2 = reqStr2;
     return this;
   }
@@ -351,13 +351,13 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @Override
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case RTYPE:
       if (value == null) {
         unsetRtype();
       } else {
-        setRtype((java.lang.Integer)value);
+        setRtype((Integer)value);
       }
       break;
 
@@ -365,7 +365,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetNode();
       } else {
-        setNode((java.lang.String)value);
+        setNode((String)value);
       }
       break;
 
@@ -373,7 +373,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetNode2();
       } else {
-        setNode2((java.lang.String)value);
+        setNode2((String)value);
       }
       break;
 
@@ -381,7 +381,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetReqInt();
       } else {
-        setReqInt((java.lang.Long)value);
+        setReqInt((Long)value);
       }
       break;
 
@@ -389,7 +389,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetReqInt2();
       } else {
-        setReqInt2((java.lang.Long)value);
+        setReqInt2((Long)value);
       }
       break;
 
@@ -397,7 +397,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetReqStr();
       } else {
-        setReqStr((java.lang.String)value);
+        setReqStr((String)value);
       }
       break;
 
@@ -405,7 +405,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       if (value == null) {
         unsetReqStr2();
       } else {
-        setReqStr2((java.lang.String)value);
+        setReqStr2((String)value);
       }
       break;
 
@@ -414,7 +414,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
 
   @org.apache.thrift.annotation.Nullable
   @Override
-  public java.lang.Object getFieldValue(_Fields field) {
+  public Object getFieldValue(_Fields field) {
     switch (field) {
     case RTYPE:
       return getRtype();
@@ -438,14 +438,14 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
       return getReqStr2();
 
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
   @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
-      throw new java.lang.IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
 
     switch (field) {
@@ -464,11 +464,11 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
     case REQ_STR2:
       return isSetReqStr2();
     }
-    throw new java.lang.IllegalStateException();
+    throw new IllegalStateException();
   }
 
   @Override
-  public boolean equals(java.lang.Object that) {
+  public boolean equals(Object that) {
     if (that instanceof TimReq)
       return this.equals((TimReq)that);
     return false;
@@ -589,7 +589,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
 
     int lastComparison = 0;
 
-    lastComparison = java.lang.Boolean.compare(isSetRtype(), other.isSetRtype());
+    lastComparison = Boolean.compare(isSetRtype(), other.isSetRtype());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -599,7 +599,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetNode(), other.isSetNode());
+    lastComparison = Boolean.compare(isSetNode(), other.isSetNode());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -609,7 +609,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetNode2(), other.isSetNode2());
+    lastComparison = Boolean.compare(isSetNode2(), other.isSetNode2());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -619,7 +619,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetReqInt(), other.isSetReqInt());
+    lastComparison = Boolean.compare(isSetReqInt(), other.isSetReqInt());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -629,7 +629,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetReqInt2(), other.isSetReqInt2());
+    lastComparison = Boolean.compare(isSetReqInt2(), other.isSetReqInt2());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -639,7 +639,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetReqStr(), other.isSetReqStr());
+    lastComparison = Boolean.compare(isSetReqStr(), other.isSetReqStr());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -649,7 +649,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
         return lastComparison;
       }
     }
-    lastComparison = java.lang.Boolean.compare(isSetReqStr2(), other.isSetReqStr2());
+    lastComparison = Boolean.compare(isSetReqStr2(), other.isSetReqStr2());
     if (lastComparison != 0) {
       return lastComparison;
     }
@@ -679,8 +679,8 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
   }
 
   @Override
-  public java.lang.String toString() {
-    java.lang.StringBuilder sb = new java.lang.StringBuilder("TimReq(");
+  public String toString() {
+    StringBuilder sb = new StringBuilder("TimReq(");
     boolean first = true;
 
     if (isSetRtype()) {
@@ -757,7 +757,7 @@ public class TimReq implements org.apache.thrift.TBase<TimReq, TimReq._Fields>, 
     }
   }
 
-  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+  private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, ClassNotFoundException {
     try {
       // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
       __isset_bitfield = 0;
