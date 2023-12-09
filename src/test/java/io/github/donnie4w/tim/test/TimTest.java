@@ -10,7 +10,9 @@
 
 package io.github.donnie4w.tim.test;
 
+import io.github.donnie4w.tim.handle.TimException;
 import io.github.donnie4w.tim.handle.Timclient;
+import io.github.donnie4w.tim.stub.TimAck;
 import io.github.donnie4w.tim.stub.TimRoomBean;
 import io.github.donnie4w.tim.stub.TimUserBean;
 import org.junit.Test;
@@ -34,11 +36,7 @@ public class TimTest {
 
 
     @Test
-    public void register() {
-    }
-
-    @Test
-    public void login() throws Exception {
+    public void timTest() throws Exception {
         Timclient tc = new TimClientWithHandle().NewTimClientWithHandle("192.168.2.11", 5120, false);
         tc.Register("jerry", "123", "github.com");
         tc.Login("jerry", "123", "github.com", "ios-20-plus", MOBILE, null);
@@ -58,6 +56,29 @@ public class TimTest {
         tc.BurnMessage(1L,"10001",   null, (short) 0, (short) 0);
 
         Thread.sleep(100000);
+    }
+
+    @Test
+    public void register(){
+        Timclient tc = new TimClientWithHandle().NewTimClientWithHandle("192.168.2.11", 5081, false);
+        try {
+           TimAck ta = tc.Register("tim10", "123", "tlnte.top");
+            System.out.println(ta.ok);
+            System.out.println(ta.n);
+        } catch (TimException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void login(){
+        Timclient tc = new TimClientWithHandle().NewTimClientWithHandle("192.168.2.11", 5081, false);
+        try {
+            tc.Login("tim10", "123", "tlnte.top","android",(byte)1,null);
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
