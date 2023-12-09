@@ -240,13 +240,13 @@ public class Timclient implements ITimClient {
     // 如果不需要使用 domain（域）时，可设置为空字符串，不同域无法相互通讯
     @Override
     public TimAck Register(String username, String pwd, String domain) throws TimException {
-        byte[] bs = handler.sendsync(this.conf, this.tx.register(username, pwd, domain));
+        byte[] bs = Clihandle.sendsync(this.conf, this.tx.register(username, pwd, domain));
         return Utils.tDecode(Arrays.copyOfRange(bs, 1, bs.length), new TimAck());
     }
 
     @Override
     public long Token(String username, String pwd, String domain) throws TimException {
-        byte[] bs = handler.sendsync(this.conf, this.tx.token(username, pwd, domain));
+        byte[] bs = Clihandle.sendsync(this.conf, this.tx.token(username, pwd, domain));
         TimAck ta = Utils.tDecode(Arrays.copyOfRange(bs, 1, bs.length), new TimAck());
         if (ta != null && ta.ok) {
             return ta.t;
