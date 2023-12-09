@@ -79,7 +79,7 @@ public class Clihandle extends Endpoint implements MessageHandler.Whole<byte[]> 
         }
     }
 
-    synchronized byte[] sendsync(Conf conf, byte[] bs) throws TimException {
+    synchronized static byte[] sendsync(Conf conf, byte[] bs) throws TimException {
         return HttpClient.post(conf.httpUrl, bs, conf.origin);
     }
 }
