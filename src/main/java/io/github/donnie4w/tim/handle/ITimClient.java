@@ -184,6 +184,12 @@ public interface ITimClient {
     // dtype：dtype 是开发者自定义的数据类型，若不需要，可以设置为0
     void  PushStream(String virtualroom,byte[] body,byte dtype) throws TimException;
 
+    // send big string
+    void BigDataString(String node,String datastring) throws TimException;
+
+    // send big binary
+    void BigDataBinary(String node,byte[] dataBinary) throws TimException;
+
     // get user information
     // 获取用户资料
    void UserInfo(String ...nodes) throws TimException;
