@@ -43,6 +43,12 @@ public class Timclient implements ITimClient {
 
     private StreamHandler streamHandler;
 
+    private BigStringHandler bigStringHandler;
+
+    private BigBinaryHandler bigBinaryHandler;
+
+    private BigBinaryStreamHandler bigBinaryStreamHandler;
+
     public Timclient(String ip, int port, boolean tls) throws TimRunTimeException {
         this.addr = formatUrl(ip, port, tls);
         if (this.addr == null) {
@@ -70,7 +76,7 @@ public class Timclient implements ITimClient {
                     pingCount = 0;
                     doMsg(t, msg);
                 } catch (Exception e) {
-                    logger.warning("failed to parse server data>>>"+e.getMessage());
+                    logger.warning("failed to parse server data>>>" + e.getMessage());
                 }
             }
 
@@ -122,7 +128,6 @@ public class Timclient implements ITimClient {
         }
     }
 
-
     private void doMsg(byte t, byte[] msg) throws TimException {
         switch (t) {
             case TIMPING:
@@ -170,9 +175,25 @@ public class Timclient implements ITimClient {
                     this.streamHandler.run(Utils.tDecode(msg, new TimStream()));
                 }
                 break;
+            case TIMBIGSTRING:
+                if (this.bigStringHandler != null) {
+                    this.bigStringHandler.run(msg);
+                }
+                break;
+            case TIMBIGBINARY:
+                if (this.bigBinaryHandler != null) {
+                    this.bigBinaryHandler.run(msg);
+                }
+                break;
+            case TIMBIGBINARYSTREAM:
+                if (this.bigBinaryStreamHandler != null) {
+                    this.bigBinaryStreamHandler.run(msg);
+                }
+                break;
             default:
                 logger.warning("undisposed>>" + t + ",data length:" + msg.length);
         }
+
     }
 
 
@@ -235,6 +256,18 @@ public class Timclient implements ITimClient {
         this.streamHandler = handler;
     }
 
+    public void BigStringHandler(BigStringHandler handler) {
+        this.bigStringHandler = handler;
+    }
+
+    public void BigBinaryHandler(BigBinaryHandler handler) {
+        this.bigBinaryHandler = handler;
+    }
+
+    public void BigBinaryStreamHandler(BigBinaryStreamHandler handler) {
+        this.bigBinaryStreamHandler = handler;
+    }
+
     // register with username and password
     // domain can be set "" where is not requied；Different domains cannot communicate with each other
     // 如果不需要使用 domain（域）时，可设置为空字符串，不同域无法相互通讯
@@ -261,16 +294,16 @@ public class Timclient implements ITimClient {
      * resource是开发者自定义的终端信息，一般是登录设备信息，如 HUAWEI P50 Pro，若不使用，赋空值即可
      **/
     @Override
-    public void Login(String name, String pwd, String domain, String resource, byte termtyp,Map<String,String> extend) throws TimException {
+    public void Login(String name, String pwd, String domain, String resource, byte termtyp, Map<String, String> extend) throws TimException {
         this.close();
-        this.tx.loginByAccount(name, pwd, domain, resource, termtyp,extend);
+        this.tx.loginByAccount(name, pwd, domain, resource, termtyp, extend);
         this.connect();
     }
 
     @Override
-    public void LoginByToken(long token, String resource, byte termtyp,Map<String,String> extend) throws TimException {
+    public void LoginByToken(long token, String resource, byte termtyp, Map<String, String> extend) throws TimException {
         this.close();
-        this.tx.loginByToken(token, resource, termtyp,extend);
+        this.tx.loginByToken(token, resource, termtyp, extend);
         this.connect();
     }
 
@@ -286,8 +319,8 @@ public class Timclient implements ITimClient {
      * modify password
      * 修改密码
      */
-    public void Modify(String oldpwd,String newpwd)throws TimException {
-        this.handler.sendws(this.tx.modify(oldpwd,newpwd));
+    public void Modify(String oldpwd, String newpwd) throws TimException {
+        this.handler.sendws(this.tx.modify(oldpwd, newpwd));
     }
 
     /**
@@ -343,16 +376,16 @@ public class Timclient implements ITimClient {
      * send  stream data to user
      */
     @Override
-    public void StreamToUser(String to, byte[] data,short udShow,short udType) throws TimException {
-        this.handler.sendws(this.tx.stream(data, to, "",udShow,udType));
+    public void StreamToUser(String to, byte[] data, short udShow, short udType) throws TimException {
+        this.handler.sendws(this.tx.stream(data, to, "", udShow, udType));
     }
 
     /**
      * send  stream data to room
      */
     @Override
-    public void StreamToRoom(String to, byte[] data,short udShow,short udType) throws TimException {
-        this.handler.sendws(this.tx.stream(data, "", to,udShow,udType));
+    public void StreamToRoom(String to, byte[] data, short udShow, short udType) throws TimException {
+        this.handler.sendws(this.tx.stream(data, "", to, udShow, udType));
     }
 
     /**
@@ -562,7 +595,7 @@ public class Timclient implements ITimClient {
 
     /**
      * blocklist of group
-     *  群黑名单
+     * 群黑名单
      */
     @Override
     public void BlockRoomMemberlist(String roomNode) throws TimException {
@@ -575,7 +608,7 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomRegister() throws TimException {
-        this.handler.sendws(this.tx.virtualroom(1, null, null));
+        this.handler.sendws(this.tx.virtualroom(1, null, null, 0));
     }
 
     /**
@@ -584,7 +617,7 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomRemove(String roomNode) throws TimException {
-        this.handler.sendws(this.tx.virtualroom(2, roomNode, null));
+        this.handler.sendws(this.tx.virtualroom(2, roomNode, null, 0));
     }
 
     /**
@@ -593,7 +626,7 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomAddAuth(String roomNode, String tonode) throws TimException {
-        this.handler.sendws(this.tx.virtualroom(3, roomNode, tonode));
+        this.handler.sendws(this.tx.virtualroom(3, roomNode, tonode, 0));
     }
 
     /**
@@ -602,7 +635,7 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomDelAuth(String roomNode, String tonode) throws TimException {
-        this.handler.sendws(this.tx.virtualroom(4, roomNode, tonode));
+        this.handler.sendws(this.tx.virtualroom(4, roomNode, tonode, 0));
     }
 
     /**
@@ -611,7 +644,14 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomSub(String roomNode) throws TimException {
-        this.handler.sendws(this.tx.virtualroom(5, roomNode, ""));
+        this.handler.sendws(this.tx.virtualroom(5, roomNode, "", 0));
+    }
+
+
+    // Subscribe the stream data of the virtual room
+    // 向虚拟房间订阅流数据
+    public void VirtualroomSubBinary(String roomNode) throws TimException {
+        this.handler.sendws(this.tx.virtualroom(5, roomNode, "", 1));
     }
 
     /**
@@ -620,7 +660,7 @@ public class Timclient implements ITimClient {
      */
     @Override
     public void VirtualroomSubCancel(String roomNode) throws TimException {
-        this.handler.sendws(this.tx.virtualroom(6, roomNode, ""));
+        this.handler.sendws(this.tx.virtualroom(6, roomNode, "", 0));
     }
 
     /**
@@ -634,6 +674,22 @@ public class Timclient implements ITimClient {
     @Override
     public void PushStream(String virtualroom, byte[] body, byte dtype) throws TimException {
         this.handler.sendws(this.tx.pushstream(virtualroom, body, dtype));
+    }
+
+    /**
+     * send big string
+     */
+    @Override
+    public void BigDataString(String node, String datastring) throws TimException {
+        this.handler.sendws(this.tx.bigString(node, datastring));
+    }
+
+    /**
+     * send big binary
+     */
+    @Override
+    public void BigDataBinary(String node, byte[] dataBinary) throws TimException {
+        this.handler.sendws(this.tx.bigBinary(node, dataBinary));
     }
 
     /**
