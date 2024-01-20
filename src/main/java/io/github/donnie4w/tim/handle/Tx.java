@@ -560,7 +560,7 @@ public class Tx {
         return null;
     }
 
-    byte[] virtualroom(int rtype, String vnode, String unode) {
+    byte[] virtualroom(int rtype, String vnode, String unode, long i) {
         TimReq tr = new TimReq();
         tr.setRtype(rtype);
         if (!Utils.isBlank(vnode)) {
@@ -568,6 +568,9 @@ public class Tx {
         }
         if (!Utils.isBlank(unode)) {
             tr.setNode2(unode);
+        }
+        if (i > 0) {
+            tr.reqInt = i;
         }
         try {
             byte[] bs = Utils.tEncode(tr);
@@ -618,6 +621,34 @@ public class Tx {
         } catch (TimException e) {
         }
         return null;
+    }
+
+    byte[] bigString(String node, String dataString) {
+        if (Utils.isBlank(node) || Utils.isBlank(dataString)) {
+            return null;
+        }
+        byte[] nodeBs = Utils.bytes(node);
+        byte[] dataStringBs = Utils.bytes(dataString);
+        byte[] seq = Utils.bytes(SEP_STR);
+        ByteBuffer bb = ByteBuffer.allocate(1 + nodeBs.length + seq.length + dataStringBs.length);
+        bb.put(TIMBIGSTRING);
+        bb.put(nodeBs);
+        bb.put(seq);
+        bb.put(dataStringBs);
+        return bb.array();
+    }
+
+    byte[] bigBinary(String node, byte[] dataBinary) {
+        if (Utils.isBlank(node) ||dataBinary==null) {
+            return null;
+        }
+        byte[] nodeBs = Utils.bytes(node);
+        ByteBuffer bb = ByteBuffer.allocate(1 + nodeBs.length + 1 + dataBinary.length);
+        bb.put(TIMBIGBINARY);
+        bb.put(nodeBs);
+        bb.put(SEP_BIN);
+        bb.put(dataBinary);
+        return bb.array();
     }
 
 }
