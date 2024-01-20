@@ -28,6 +28,9 @@ public class Const {
     public static final byte TIMREVOKEMESSAGE = 92; //撤回
     public static final byte TIMBURNMESSAGE = 93; //焚烧信息
     public static final byte TIMSTREAM = 94; //虚拟房间流数据
+    public static final byte TIMBIGSTRING = 95; //大字符串
+    public static final byte TIMBIGBINARY = 96; //大字节数组
+    public static final byte TIMBIGBINARYSTREAM = 97; //大字节流
 
     //room species 群种类
     public static final long ROOM_PRIVATE = 1; //私有群，入群需验证
@@ -54,7 +57,7 @@ public class Const {
     public static final int BUSINESS_BLOCKROSTERLIST = 18; //拉取账号黑名单
     public static final int BUSINESS_BLOCKROOMLIST = 19; //拉取账号拉黑群名单
     public static final int BUSINESS_BLOCKROOMMEMBERLIST = 20; //管理员拉取群黑名单
-    public static final  int BUSINESS_MODIFYAUTH  = 21; //修改密码
+    public static final int BUSINESS_MODIFYAUTH = 21; //修改密码
     public static final int NODEINFO_ROSTER = 1;//花名册
     public static final int NODEINFO_ROOM = 2; //用户的群
     public static final int NODEINFO_ROOMMEMBER = 3; //群的成员
@@ -73,4 +76,8 @@ public class Const {
     public static final int VRITURLROOM_RMAUTH = 4; //虚拟房间除权
     public static final int VRITURLROOM_SUB = 5; //虚拟房间订阅
     public static final int VRITURLROOM_SUBCANCEL = 6;//虚拟房间取消订阅
+
+    public static final byte SEP_BIN = (byte)(131);
+    public static final String SEP_STR = "|";
+
 }
