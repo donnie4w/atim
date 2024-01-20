@@ -627,9 +627,9 @@ public class Tx {
         if (Utils.isBlank(node) || Utils.isBlank(dataString)) {
             return null;
         }
-        byte[] nodeBs = Utils.bytes(node);
-        byte[] dataStringBs = Utils.bytes(dataString);
-        byte[] seq = Utils.bytes(SEP_STR);
+        byte[] nodeBs = Utils.stringToBytes(node);
+        byte[] dataStringBs = Utils.stringToBytes(dataString);
+        byte[] seq = Utils.stringToBytes(SEP_STR);
         ByteBuffer bb = ByteBuffer.allocate(1 + nodeBs.length + seq.length + dataStringBs.length);
         bb.put(TIMBIGSTRING);
         bb.put(nodeBs);
@@ -642,7 +642,7 @@ public class Tx {
         if (Utils.isBlank(node) ||dataBinary==null) {
             return null;
         }
-        byte[] nodeBs = Utils.bytes(node);
+        byte[] nodeBs = Utils.stringToBytes(node);
         ByteBuffer bb = ByteBuffer.allocate(1 + nodeBs.length + 1 + dataBinary.length);
         bb.put(TIMBIGBINARY);
         bb.put(nodeBs);
