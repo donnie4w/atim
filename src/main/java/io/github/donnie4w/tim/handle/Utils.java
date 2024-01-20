@@ -38,15 +38,15 @@ public class Utils {
         }
     }
 
-    static String string(@NotNull byte[] bs) {
+    public  static String bytesTostring(@NotNull byte[] bs) {
         return new String(bs, StandardCharsets.ISO_8859_1);
     }
 
-    static byte[] bytes(@NotNull String s) {
+    public static byte[] stringToBytes(@NotNull String s) {
         return s.getBytes(StandardCharsets.ISO_8859_1);
     }
 
-    static boolean isBlank(String v) {
+    public static boolean isBlank(String v) {
         return null == v || "".equals(v.trim());
     }
 
