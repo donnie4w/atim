@@ -13,6 +13,7 @@ import org.apache.thrift.TSerializable;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.transport.TMemoryBuffer;
 import org.jetbrains.annotations.NotNull;
+
 import java.nio.charset.StandardCharsets;
 
 public class Utils {
