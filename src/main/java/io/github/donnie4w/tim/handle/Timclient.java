@@ -1,13 +1,19 @@
 /*
- * Copyright (c) , donnie <donnie4w@gmail.com>
- * All rights reserved.
- * https://github.com/donnie4w/tim
- * https://githuc.com/donnie4w/atim
+ * Copyright (c) 2024 donnie4w <donnie4w@gmail.com>. All rights reserved.
+ * Original source: https://github.com/donnie4w/atim
  *
- * Use of this source code is governed by a MIT-style license that can be
- * found in the LICENSE file
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package io.github.donnie4w.tim.handle;
 
 import io.github.donnie4w.tim.handler.*;
@@ -301,9 +307,9 @@ public class Timclient implements ITimClient {
     }
 
     @Override
-    public void LoginByToken(long token, String resource, byte termtyp, Map<String, String> extend) throws TimException {
+    public void LoginByToken(String username, String token, String domain, String resource, byte termtyp, Map<String, String> extend) throws TimException {
         this.close();
-        this.tx.loginByToken(token, resource, termtyp, extend);
+        this.tx.loginByToken(username, token, domain, resource, termtyp, extend);
         this.connect();
     }
 

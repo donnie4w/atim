@@ -1,11 +1,18 @@
 /*
- * Copyright (c) , donnie <donnie4w@gmail.com>
- * All rights reserved.
- * https://github.com/donnie4w/tim
- * https://githuc.com/donnie4w/atim
+ * Copyright (c) 2024 donnie4w <donnie4w@gmail.com>. All rights reserved.
+ * Original source: https://github.com/donnie4w/atim
  *
- * Use of this source code is governed by a MIT-style license that can be
- * found in the LICENSE file
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package io.github.donnie4w.tim.handle;
 
@@ -87,11 +94,13 @@ public class Tx {
     }
 
 
-    byte[] loginByToken(long token, String resource, byte termtyp, Map<String, String> extend) {
+    byte[] loginByToken(String username, String token, String domain, String resource, byte termtyp, Map<String, String> extend) {
         ta.setToken(token);
         ta.setResource(resource);
         ta.setTermtyp(termtyp);
         ta.setExtend(extend);
+        ta.setName(username);
+        ta.setDomain(domain);
         try {
             byte[] bs = Utils.tEncode(ta);
             ByteBuffer bb = ByteBuffer.allocate(1 + bs.length);
@@ -135,16 +144,16 @@ public class Tx {
         if (!Utils.isBlank(to)) {
             tm.setToTid(new Tid(to));
         }
-        if (udshow > 0) {
+        if (udshow != 0) {
             tm.setUdshow(udshow);
         }
-        if (udtype > 0) {
+        if (udtype != 0) {
             tm.setUdtype(udtype);
         }
         if (!Utils.isBlank(msg)) {
             tm.setDataString(msg);
         }
-        if (msgId > 0) {
+        if (msgId != 0) {
             tm.setMid(msgId);
         }
         try {
@@ -188,10 +197,10 @@ public class Tx {
         if (data != null) {
             tm.setDataBinary(data);
         }
-        if (udShow > 0) {
+        if (udShow != 0) {
             tm.setUdshow(udShow);
         }
-        if (udType > 0) {
+        if (udType != 0) {
             tm.setUdtype(udType);
         }
         try {
@@ -215,13 +224,13 @@ public class Tx {
         if (!Utils.isBlank(to)) {
             tp.setToTid(new Tid(to));
         }
-        if (show > 0) {
+        if (show != 0) {
             tp.setShow(show);
         }
         if (!Utils.isBlank(status)) {
             tp.setStatus(status);
         }
-        if (subStatus > 0) {
+        if (subStatus != 0) {
             tp.setSubStatus(subStatus);
         }
         try {
@@ -569,7 +578,7 @@ public class Tx {
         if (!Utils.isBlank(unode)) {
             tr.setNode2(unode);
         }
-        if (i > 0) {
+        if (i != 0) {
             tr.reqInt = i;
         }
         try {
@@ -639,7 +648,7 @@ public class Tx {
     }
 
     byte[] bigBinary(String node, byte[] dataBinary) {
-        if (Utils.isBlank(node) ||dataBinary==null) {
+        if (Utils.isBlank(node) || dataBinary == null) {
             return null;
         }
         byte[] nodeBs = Utils.stringToBytes(node);
