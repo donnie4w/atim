@@ -1,19 +1,29 @@
 /*
- * Copyright (c) , donnie <donnie4w@gmail.com>
- * All rights reserved.
- * https://github.com/donnie4w/tim
- * https://githuc.com/donnie4w/atim
+ * Copyright (c) 2024 donnie4w <donnie4w@gmail.com>. All rights reserved.
+ * Original source: https://github.com/donnie4w/atim
  *
- * Use of this source code is governed by a MIT-style license that can be
- * found in the LICENSE file
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package io.github.donnie4w.tim.test;
 
+import io.github.donnie4w.tim.handle.Const;
 import io.github.donnie4w.tim.handle.Timclient;
-import io.github.donnie4w.tim.handler.PullmessageHandler;
+import io.github.donnie4w.tim.handle.Utils;
 import io.github.donnie4w.tim.log.Log;
 import io.github.donnie4w.tim.stub.*;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -78,12 +88,27 @@ public class TimClientWithHandle {
             tc.BroadPresence(SUBSTATUS_REQ, (short) 0, "I am busy😄"); //when finish offline message recive,subcript and broad the presence
         });
 
-        tc.PullmessageHandler((tml)->{
+        tc.PullmessageHandler((tml) -> {
             if (tml != null) {
                 for (TimMessage tm : tml.getMessageList()) {
                     Log.debug("pull msg>>>", tm);
                 }
             }
+        });
+
+        tc.BigBinaryStreamHandler((bs) -> {
+            String node = null;
+            byte[] data = null;
+            if (bs != null) {
+                for (int i = 0; i < bs.length; i++) {
+                    if (bs[i] == Const.SEP_BIN) {
+                        node = Utils.bytesTostring(Arrays.copyOfRange(bs, 0, i));
+                        data = Arrays.copyOfRange(bs, i + 1, bs.length);
+                        break;
+                    }
+                }
+            }
+            Log.debug(node);
         });
 
         //记录状态订阅者
