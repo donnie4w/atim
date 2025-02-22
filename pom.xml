@@ -6,7 +6,7 @@
 
     <groupId>io.github.donnie4w</groupId>
     <artifactId>atim</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
-            <version>0.18.1</version>
+            <version>0.21.0</version>
         </dependency>
         <!-- servlet -->
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
